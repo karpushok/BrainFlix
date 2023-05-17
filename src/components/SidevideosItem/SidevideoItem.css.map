@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"SidevideoItem.css"}
+{"version":3,"sources":["SidevideoItem.scss","SidevideoItem.css"],"names":[],"mappings":"AAAQ,gDAAA;AAER;EACI,YAAA;EACA,aAAA;EACA,2BAAA;EACA,SAAA;ACAJ;ADEQ;EACI,WAAA;EACA,YAAA;EACA,oBAAA;KAAA,iBAAA;EACA,kBAAA;ACAZ;ADIQ;EACI,mBAAA;ACFZ","file":"SidevideoItem.css"}

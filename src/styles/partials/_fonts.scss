@@ -15,55 +15,39 @@
 @media screen and (min-width: 768px) {
 // page-header
 h1 {
-    font-size: 3.75rem;
-    line-height: 4.25rem;
+    font-size: 2.1rem;
+    line-height: 1.25rem;
     font-weight: 700;
     font-family: 'Bold';
 }
 
 // section-header
 h2 {
-    font-size: 2.25rem;
-    line-height: 2.75rem;
+    font-size: 0.75rem;
+    line-height: 1.375rem;
     font-weight: 700;
-    font-family: 'Demi';
+    font-family: 'Bold';
 }
 
 // subheader
 h3 {
-    font-size: 1.5rem;
-    line-height: 3rem;
-    font-weight: 600;
-    font-family: 'Demi';
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    font-family: 'Bold';
 }
 
 h4 {
-    font-size: 1.2rem;
-    line-height: 3rem;
-    font-weight: 600;
-    font-family: 'Demi';
-}
-
-// body-copy
-main p {
-    font-size: 1rem;
+    font-size: 0.875rem;
     line-height: 1.375rem;
-    font-weight: 400;
-    font-family: 'Regular';
+    font-weight: 700;
+    font-family: 'Bold';
 }
 
-// footer-copy
-footer p {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-weight: 400;
-    font-family: 'Regular';
-}
-
-// labels-and-buttons
-a {
-    font-size: 0.75rem;
-    line-height: 1.25rem;
+// pagragraph text
+p {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
     font-weight: 400;
     font-family: 'Regular';
 }
@@ -76,7 +60,7 @@ a {
     h1 {
         font-size: 1.5rem;
         line-height: 2rem;
-        font-weight: 700;
+        font-weight: 300;
         font-family: 'Bold';
     }
     

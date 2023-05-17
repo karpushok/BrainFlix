@@ -1,1 +1,17 @@
-/*# sourceMappingURL=SidevideoItem.css.map */
+@import url(../../styles/partials/_globals.scss);
+.sidevideos__item {
+  margin: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+.sidevideos__item-image-img {
+  width: 8rem;
+  height: 5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 4px;
+}
+.sidevideos__item-container-title {
+  margin-bottom: 1rem;
+}/*# sourceMappingURL=SidevideoItem.css.map */

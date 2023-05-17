@@ -15,9 +15,11 @@
     &__data{
         margin: 1rem;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
+        gap: 5rem;
         &-container {
             display: block;
+            text-align: start;
             &-views {
                 @include counter-margins;
             }

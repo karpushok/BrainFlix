@@ -1,0 +1,21 @@
+@import url(../../styles/partials/_globals.scss);
+
+.sidevideos__item {
+    margin: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    &-image {
+        &-img {
+            width: 8rem;
+            height: 5rem;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+    }
+    &-container {
+        &-title {
+            margin-bottom: 1rem;
+        }
+    }
+}
