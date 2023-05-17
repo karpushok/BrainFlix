@@ -1,3 +1,7 @@
+import "../../styles/partials/_colors.scss"
+import "../../styles/partials/_fonts.scss"
+import React, {useState} from 'react'
+
 function CommentItem(){
 return (
 <div className="commentlist__item">

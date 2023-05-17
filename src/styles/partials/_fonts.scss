@@ -3,10 +3,7 @@
     font-family: Bold;
     src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf);
 }
-// @font-face {
-//     font-family: Demi;
-//     src: url();
-// }
+
 @font-face {
     font-family: Regular;
     src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf);
@@ -85,25 +82,26 @@ a {
     
     // section-header
     h2 {
-        font-size: 1.5rem;
-        line-height: 2rem;
+        font-size: 0.75rem;
+        line-height: 1.25rem;
         font-weight: 700;
-        font-family: 'Demi';
+        font-family: 'Bold';
     }
     
     // subheader
     h3 {
-        font-size: 0.875rem;
-        line-height: 1.375rem;
-        font-weight: 600;
-        font-family: 'Demi';
+        font-size: 0.8125rem;
+        line-height: 1.125rem;
+        font-weight: 700;
+        font-family: 'Bold';
     }
     
-    h4 {
-        font-size: 0.875rem;
-        line-height: 1.375rem;
-        font-weight: 600;
-        font-family: 'Demi';
+    // labels-and-buttons
+    h4 { 
+        font-size: 0.8125rem;
+        line-height: 1.125rem;
+        font-weight: 400;
+        font-family: 'Regular';
     }
 
     // body and footer - copy

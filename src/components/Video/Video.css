@@ -1,1 +1,34 @@
-/*# sourceMappingURL=Video.css.map */
+@import url(../../styles/partials/_globals.scss);
+.video__image {
+  width: 100vw;
+}
+.video__image-object {
+  width: 100%;
+  height: 15rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.video__title {
+  margin: 1rem;
+}
+.video__data {
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.video__data-container {
+  display: block;
+}
+.video__data-container-views {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+.video__data-container-likes {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+.video__description {
+  margin: 1rem;
+}/*# sourceMappingURL=Video.css.map */

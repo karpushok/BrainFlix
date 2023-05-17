@@ -1,4 +1,7 @@
 import CommentItem from "../CommentItem/CommentItem";
+import "../../styles/partials/_colors.scss"
+import "../../styles/partials/_fonts.scss"
+import React, {useState} from 'react'
 
 function Comments(){
   return(
