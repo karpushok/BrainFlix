@@ -1,4 +1,5 @@
 function CommentItem(){
+return (
 <div className="commentlist__item">
     <div className="commentlist__item-profile"></div>
     <div className="commentlist__item-container">
@@ -8,7 +9,8 @@ function CommentItem(){
         </div>
     <div className="commentlist__item-paragraph"></div>
     </div>
-</div>        
+</div>  
+);
 
 }
 

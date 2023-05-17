@@ -1,3 +1,4 @@
+@import './styles/partials/_colors.scss';
 
 * {
   margin: 0;
@@ -6,3 +7,8 @@
 }
 
 
+@media screen and (width >= 768px) {
+  .wrapper {
+
+  }
+}

@@ -1,6 +1,7 @@
 import CommentItem from "../CommentItem/CommentItem";
 
 function Comments(){
+  return(
     <div className="comments">
         <div className="comments__counter"></div>
         <div className="comments__input">
@@ -13,6 +14,7 @@ function Comments(){
           <CommentItem/>
         </div>
     </div> 
+    );
 }
 
 
