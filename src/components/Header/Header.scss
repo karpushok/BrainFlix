@@ -1,5 +1,6 @@
 @import "../../styles/partials/_colors.scss";
 @import "../../styles/partials/_fonts.scss";
+@import "../../styles/partials/_globals";
 
 .header {
     &__logo { // styles for logo image
@@ -17,11 +18,7 @@
         margin: 1rem;
         &-profile {
             &-image {
-                width: 2.25rem;
-                height: 2.25rem;
-                object-fit: cover;
-                object-position: center;
-                border-radius: 50%;
+                @include avatar-mobile;
             }
         }
         &-search { // styles for search input

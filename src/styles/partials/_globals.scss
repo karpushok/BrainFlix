@@ -6,3 +6,11 @@
     gap: 0.5rem;
 }
 
+@mixin avatar-mobile {
+    width: 2.25rem;
+    height: 2.25rem;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
