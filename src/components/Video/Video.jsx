@@ -1,6 +1,4 @@
 import "./Video.css";
-import "../../styles/partials/_colors.scss"
-import "../../styles/partials/_fonts.scss"
 import React, {useState} from 'react'
 
 import likesImage from "../../assets/icons/likes.svg"
@@ -17,7 +15,9 @@ function Video({ currentVideo }) {
       <div className="video__data">
         <div className="video__data-container">
           <div className="video__data-container-channel"><h3>By {currentVideo.channel}</h3></div>
-          <div className="video__data-container-date"><h4>{currentVideo.date}</h4></div> 
+          <div className="video__data-container-date">
+            <h4 className="video__data-container-date-output">{currentVideo.date}</h4>
+          </div> 
         </div>
         <div className="video__data-container">
           <div className="video__data-container-views">
@@ -29,7 +29,6 @@ function Video({ currentVideo }) {
             <h4>{currentVideo.likes}</h4>
           </div> 
         </div>
-        
       </div>
       <div className="video__description"><p>{currentVideo.description}</p></div>
     </div>

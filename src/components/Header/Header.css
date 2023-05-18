@@ -52,7 +52,7 @@
     color: #323232;
   }
   h2 {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     line-height: 1.25rem;
     font-weight: 700;
     font-family: "Bold";
@@ -108,6 +108,7 @@
   height: 2.25rem;
   background-color: #FAFAFA;
   border: 1px solid #AFAFAF;
+  border-radius: 4px;
   padding-left: 2.5rem;
   background-image: url(../../assets/icons/search.svg);
   background-size: 1.2rem 1.2rem;

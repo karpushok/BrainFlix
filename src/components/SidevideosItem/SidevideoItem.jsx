@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
 import "./SidevideoItem.css";
-import "../../styles/partials/_colors.scss";
-import "../../styles/partials/_fonts.scss";
 
 
 function SidevideosItem (props) {
