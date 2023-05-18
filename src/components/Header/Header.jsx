@@ -21,7 +21,6 @@ function Header() {
           </div>
         </div>
         <button className="header__upload">UPLOAD</button>
-        
       </div>
     </header>
   );

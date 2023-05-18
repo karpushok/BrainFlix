@@ -8,12 +8,12 @@ function Comments(){
   return(
     <div className="comments">
         <div className="comments__counter"><h3>3 COMMENTS</h3></div>
+        <h2 className="comments__header">JOIN THE CONVERSATION</h2> 
         <div className="comments__input">
           <div className="comments__input-profile">
             <img src={avatar} alt="logo" className="comments__input-profile-avatar"/>
           </div>
           <div className="comments__input-container">
-            <h2 className="comments__input-container-header">JOIN THE CONVERSATION</h2>
             <textarea className="comments__input-container-input"
                 id="comment"
                 name="comment"

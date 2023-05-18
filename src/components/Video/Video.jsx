@@ -5,6 +5,9 @@ import likesImage from "../../assets/icons/likes.svg"
 import viewsImage from "../../assets/icons/views.svg"
 
 function Video({ currentVideo }) {
+  const timestamp = new Date(currentVideo.timestamp);
+  const formattedDate = timestamp.toLocaleDateString(); // Format the date as desired
+
   return (
     <div className="video">
       <div className="video__image">
@@ -16,7 +19,7 @@ function Video({ currentVideo }) {
         <div className="video__data-container">
           <div className="video__data-container-channel"><h3>By {currentVideo.channel}</h3></div>
           <div className="video__data-container-date">
-            <h4 className="video__data-container-date-output">{currentVideo.date}</h4>
+            <h4 className="video__data-container-date-output">{formattedDate}</h4>
           </div> 
         </div>
         <div className="video__data-container">
