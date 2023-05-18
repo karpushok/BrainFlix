@@ -1,4 +1,6 @@
 @import url(../../styles/partials/_globals.scss);
+@import "../../styles/partials/_colors.scss";
+@import "../../styles/partials/_fonts.scss";
 
 .video {
     &__image {
@@ -11,13 +13,16 @@
     }
     &__title {
         margin: 1rem;
+        border-bottom: 1px solid $secondary-silver;
     }
     &__data{
         margin: 1rem;
         display: flex;
         justify-content: flex-start;
         gap: 5rem;
+        
         &-container {
+            
             display: block;
             text-align: start;
             &-views {

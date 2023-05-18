@@ -1,1 +1,130 @@
-/*# sourceMappingURL=Header.css.map */
+@font-face {
+  font-family: Bold;
+  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf);
+}
+@font-face {
+  font-family: Regular;
+  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf);
+}
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 2.1rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    font-family: "Bold";
+    color: #323232;
+  }
+  h2 {
+    font-size: 0.75rem;
+    line-height: 1.375rem;
+    font-weight: 700;
+    font-family: "Bold";
+    color: #AFAFAF;
+  }
+  h3 {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    font-family: "Bold";
+    color: #323232;
+  }
+  h4 {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 700;
+    font-family: "Bold";
+    color: #AFAFAF;
+  }
+  p {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+    font-family: "Regular";
+    color: #323232;
+  }
+}
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 300;
+    font-family: "Bold";
+    color: #323232;
+  }
+  h2 {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    font-family: "Bold";
+    color: #AFAFAF;
+  }
+  h3 {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    font-weight: 700;
+    font-family: "Bold";
+    color: #323232;
+  }
+  h4 {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+    font-family: "Regular";
+    color: #AFAFAF;
+  }
+  p {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+    font-family: "Regular";
+    color: #323232;
+  }
+}
+.header__logo {
+  text-align: center;
+  margin-top: 1rem;
+}
+.header__logo-image {
+  max-width: 120px;
+  max-height: 25px;
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin: 1rem;
+}
+.header__container-profile-image {
+  width: 2.25rem;
+  height: 2.25rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 50%;
+}
+.header__container-search-input {
+  width: 75vw;
+  height: 2.25rem;
+  background-color: #FAFAFA;
+  border: 1px solid #AFAFAF;
+  padding-left: 2.5rem;
+  background-image: url(../../assets/icons/search.svg);
+  background-size: 1.2rem 1.2rem;
+  background-repeat: no-repeat;
+  background-position: 0.5rem;
+}
+.header__upload {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  width: calc(100% - 2rem);
+  height: 2.5rem;
+  color: white;
+  background-color: #0095FF;
+  border: none;
+  border-radius: 4px;
+  background-image: url(../../assets/icons/upload.svg);
+  background-size: 1.5rem 1.5rem;
+  background-repeat: no-repeat;
+  background-position: 0.5rem;
+}/*# sourceMappingURL=Header.css.map */

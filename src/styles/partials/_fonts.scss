@@ -1,3 +1,5 @@
+@import './colors';
+
 // IMPORT FONTS
 @font-face {
     font-family: Bold;
@@ -19,6 +21,7 @@ h1 {
     line-height: 1.25rem;
     font-weight: 700;
     font-family: 'Bold';
+    color: $primary-black;
 }
 
 // section-header
@@ -27,6 +30,7 @@ h2 {
     line-height: 1.375rem;
     font-weight: 700;
     font-family: 'Bold';
+    color: $primary-silver;
 }
 
 // subheader
@@ -35,6 +39,7 @@ h3 {
     line-height: 1.25rem;
     font-weight: 700;
     font-family: 'Bold';
+    color: $primary-black;
 }
 
 h4 {
@@ -42,6 +47,7 @@ h4 {
     line-height: 1.375rem;
     font-weight: 700;
     font-family: 'Bold';
+    color: $primary-silver;
 }
 
 // pagragraph text
@@ -50,6 +56,7 @@ p {
     line-height: 1.375rem;
     font-weight: 400;
     font-family: 'Regular';
+    color: $primary-black;
 }
 }
 
@@ -62,6 +69,7 @@ p {
         line-height: 2rem;
         font-weight: 300;
         font-family: 'Bold';
+        color: $primary-black;
     }
     
     // section-header
@@ -70,6 +78,7 @@ p {
         line-height: 1.25rem;
         font-weight: 700;
         font-family: 'Bold';
+        color: $primary-silver;
     }
     
     // subheader
@@ -78,6 +87,7 @@ p {
         line-height: 1.125rem;
         font-weight: 700;
         font-family: 'Bold';
+        color: $primary-black;
     }
     
     // labels-and-buttons
@@ -86,6 +96,7 @@ p {
         line-height: 1.125rem;
         font-weight: 400;
         font-family: 'Regular';
+        color: $primary-silver;
     }
 
     // body and footer - copy
@@ -94,14 +105,6 @@ p {
         line-height: 1.125rem;
         font-weight: 400;
         font-family: 'Regular';
-    }
-    
-    
-    // labels-and-buttons
-    a {
-        font-size: 0.8125rem;
-        line-height: 1.25rem;
-        font-weight: 200;
-        font-family: 'Regular';
+        color: $primary-black;
     }
     }

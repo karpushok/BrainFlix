@@ -1,0 +1,12 @@
+@import url(../../styles/partials/_globals.scss);
+@import "../../styles/partials/_colors.scss";
+@import "../../styles/partials/_fonts.scss";
+
+.sidevideos{
+    margin-top: 1rem;
+    &__header {
+    margin: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid $secondary-silver;
+    }
+}

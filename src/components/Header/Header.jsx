@@ -1,19 +1,29 @@
 import "../../styles/partials/_colors.scss"
 import "../../styles/partials/_fonts.scss"
 import React, {useState} from 'react'
+import "./Header.scss"
+
+import logo from '../../assets/images/BrainFlix-logo.svg'
+import avatar from "../../assets/images/Mohan-muruge.jpg"
+
 
 function Header() {
   return (
     <header className="header">
       <div className="wrapper">
-        <div className="header__logo"></div>
-        <div className="header__search">
-          <input type="text" placeholder="Search" />
+        <div className="header__logo">
+          <img src={logo} alt="logo" className="header__logo-image"/>
+        </div>
+        <div className="header__container">
+          <div className="header__container-search">
+            <input type="text" placeholder="Search" className="header__container-search-input"/>
+          </div>
+          <div className="header__container-profile">
+            <img src={avatar} alt="Avatar" className="header__container-profile-image" />
+          </div>
         </div>
         <button className="header__upload">UPLOAD</button>
-        <div className="header__profile">
-          <img src="" alt="Avatar" className="header__avatar" />
-        </div>
+        
       </div>
     </header>
   );
