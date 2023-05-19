@@ -94,4 +94,39 @@
 
 // DESKTOP STYLES
 
-@media screen and (min-width: 1280px) {}
+@media screen and (min-width: 1280px) {
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        align-items: center;
+    }
+    .header {
+        &__logo { // styles for logo image
+            &-image {
+                margin-bottom: 1rem;
+                margin-top: 0;
+            }
+        }
+        &__container {
+            &-profile {
+                &-image {
+                    @include avatar-mobile;
+                }
+            }
+            &-search { // styles for search input
+                &-input {
+                    width: 50vw;
+                    margin: 0;
+                }
+            }
+        }
+        &__upload { // styles for upload button
+            width: 10rem;
+            margin: 0;
+            height: 2.25rem;
+        }
+    } 
+}

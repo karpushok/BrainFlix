@@ -4,12 +4,14 @@
 
 .video {
     &__image {
+        display: flex;
+        justify-content: center;
         width: 100vw;
-        
+        background-color: $secondary-black;
+        height: 56vw; // screen 16:9 setting
         &-object {
-           width: 100%;
-           height: 15rem;
-           object-fit: cover;
+           height: 56vw;
+           object-fit: contain;
         //    background-image: url(../../assets/icons/scrub.svg);
         }
     }
@@ -54,11 +56,6 @@
 
 @media ((min-width: 768px) and (max-width: 1279px)){
     .video {
-        &__image {
-            &-object {
-               height: 30rem;
-            }
-        }
         &__data{
             margin: 1.5rem;
             display: flex;
@@ -82,4 +79,33 @@
 
 // DESKTOP STYLES
 
-@media screen and (min-width: 1280px) {}
+@media screen and (min-width: 1280px) {
+    .video {
+        &__image {
+            height: 45vw; // screen 16:9 setting
+            &-object {
+               height: 45vw;
+               object-fit: contain;
+            //    background-image: url(../../assets/icons/scrub.svg);
+            }
+        }
+        &__data{
+            margin: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+                &-container {           
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 2rem;
+                    align-items: center;
+                }
+        }
+        &__title {
+            border-bottom: none;
+            margin: 1.5rem;
+        }
+        &__description {
+            margin: 1.5rem;
+        }
+    }
+}

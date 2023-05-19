@@ -1,39 +1,65 @@
 import "./Video.css";
-import React, {useState} from 'react'
+import React, { useState } from "react";
 
-import likesImage from "../../assets/icons/likes.svg"
-import viewsImage from "../../assets/icons/views.svg"
+import likesImage from "../../assets/icons/likes.svg";
+import viewsImage from "../../assets/icons/views.svg";
 
 function Video({ currentVideo }) {
   const timestamp = new Date(currentVideo.timestamp);
-  const formattedDate = timestamp.toLocaleDateString(); // Format the date as desired
+  const formattedDate = timestamp.toLocaleDateString('en-GB'); // Format the date as desired
+
+  // video__player
 
   return (
     <div className="video">
       <div className="video__image">
-        <img src={currentVideo.image} alt="hero" className="video__image-object"/>
+        <video
+          autoPlay
+          loop
+          id=""
+          className="video__image-object"
+          poster={currentVideo.image}
+        >
+          {/* <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type="video/mp4"/> */}
+          <source src={currentVideo.video} type="video/mp4"/>
+        </video>
+
       </div>
-      <div className="video__title"><h1>{currentVideo.title}</h1></div>
-      
+      <div className="video__title">
+        <h1>{currentVideo.title}</h1>
+      </div>
+
       <div className="video__data">
         <div className="video__data-container">
-          <div className="video__data-container-channel"><h3>By {currentVideo.channel}</h3></div>
+          <div className="video__data-container-channel">
+            <h3>By {currentVideo.channel}</h3>
+          </div>
           <div className="video__data-container-date">
-            <h4 className="video__data-container-date-output">{formattedDate}</h4>
-          </div> 
+            <h4 className="video__data-container-date-output">
+              {formattedDate}
+            </h4>
+          </div>
         </div>
         <div className="video__data-container">
           <div className="video__data-container-views">
-            <img src={viewsImage} className="video__data-container-views-image"/>
+            <img
+              src={viewsImage}
+              className="video__data-container-views-image"
+            />
             <h4>{currentVideo.views}</h4>
           </div>
           <div className="video__data-container-likes">
-            <img src={likesImage} className="video__data-container-likes-image"/>
+            <img
+              src={likesImage}
+              className="video__data-container-likes-image"
+            />
             <h4>{currentVideo.likes}</h4>
-          </div> 
+          </div>
         </div>
       </div>
-      <div className="video__description"><p>{currentVideo.description}</p></div>
+      <div className="video__description">
+        <p>{currentVideo.description}</p>
+      </div>
     </div>
   );
 }

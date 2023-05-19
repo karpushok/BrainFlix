@@ -161,4 +161,36 @@
     margin: 0;
     height: 2.25rem;
   }
+}
+@media screen and (min-width: 1280px) {
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    align-items: center;
+  }
+  .header__logo-image {
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+  .header__container-profile-image {
+    width: 2.25rem;
+    height: 2.25rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+    border-radius: 50%;
+  }
+  .header__container-search-input {
+    width: 50vw;
+    margin: 0;
+  }
+  .header__upload {
+    width: 10rem;
+    margin: 0;
+    height: 2.25rem;
+  }
 }/*# sourceMappingURL=Header.css.map */
