@@ -78,11 +78,12 @@
                 right: 1rem;
                 top: 1rem;
                 &-image {
-                    @include avatar-mobile;
+                    @include avatar-desktop;
                 }
             }
             &-search { // styles for search input
                 &-input {
+                    height: 2.5rem;
                     width: 50vw;
                     margin: 0;
                 }
@@ -91,7 +92,7 @@
         &__upload { // styles for upload button
             width: 10rem;
             margin: 0;
-            height: 2.25rem;
+            height: 2.5rem;
             margin-right: 4rem;
         }
     }
@@ -120,7 +121,7 @@
 
             &-profile {
                 &-image {
-                    @include avatar-mobile;
+                    @include avatar-desktop;
                 }
                 position: absolute;
                 right: 1rem;
@@ -129,7 +130,7 @@
             }
             &-search { // styles for search input
                 &-input {
-                    align-self: end;
+                    height: 2.5rem;
                     width: 50vw;
                     margin: 0;
                 }
@@ -138,7 +139,7 @@
         &__upload { // styles for upload button
             width: 10rem;
             margin: 0;
-            height: 2.25rem;
+            height: 2.5rem;
             margin-right: 4rem;
         }
 

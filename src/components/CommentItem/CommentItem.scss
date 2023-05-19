@@ -32,6 +32,34 @@
 
 @media ((min-width: 768px) and (max-width: 1279px)){}
 
+.comment-list__item {
+    margin: 1.5rem;
+    padding-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    border-top: 1px solid $secondary-silver;
+
+    &-profile {
+        min-width: 2.5rem;
+        height: 2.5rem;
+    }
+
+}
+
 // DESKTOP STYLES
 
-@media screen and (min-width: 1280px) {}
+@media screen and (min-width: 1280px) {
+    .comment-list__item {
+        margin: 1.5rem;
+        padding-top: 1rem;
+        display: flex;
+        gap: 1rem;
+        border-top: 1px solid $secondary-silver;
+    
+        &-profile {
+            min-width: 2.5rem;
+            height: 2.5rem;
+        }
+    
+    }
+}

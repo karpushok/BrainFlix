@@ -6,6 +6,10 @@
   font-family: Regular;
   src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf);
 }
+@font-face {
+  font-family: Demi;
+  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf);
+}
 @media screen and (min-width: 768px) {
   h1 {
     font-size: 2.1rem;
@@ -15,28 +19,28 @@
     color: #323232;
   }
   h2 {
-    font-size: 0.75rem;
+    font-size: 1rem;
     line-height: 1.375rem;
     font-weight: 700;
-    font-family: "Bold";
+    font-family: "Demi";
     color: #AFAFAF;
   }
   h3 {
-    font-size: 0.75rem;
+    font-size: 1rem;
     line-height: 1.25rem;
     font-weight: 700;
-    font-family: "Bold";
+    font-family: "Demi";
     color: #323232;
   }
   h4 {
-    font-size: 0.875rem;
+    font-size: 1rem;
     line-height: 1.375rem;
-    font-weight: 700;
-    font-family: "Bold";
+    font-weight: 400;
+    font-family: "Regular";
     color: #AFAFAF;
   }
   p {
-    font-size: 0.875rem;
+    font-size: 1rem;
     line-height: 1.375rem;
     font-weight: 400;
     font-family: "Regular";
@@ -47,22 +51,22 @@
   h1 {
     font-size: 1.5rem;
     line-height: 2rem;
-    font-weight: 300;
-    font-family: "Bold";
+    font-weight: 700;
+    font-family: "Demi";
     color: #323232;
   }
   h2 {
     font-size: 0.85rem;
     line-height: 1.25rem;
     font-weight: 700;
-    font-family: "Bold";
+    font-family: "Demi";
     color: #AFAFAF;
   }
   h3 {
     font-size: 0.8125rem;
     line-height: 1.125rem;
     font-weight: 700;
-    font-family: "Bold";
+    font-family: "Demi";
     color: #323232;
   }
   h4 {
@@ -75,7 +79,7 @@
   p {
     font-size: 0.8125rem;
     line-height: 1.125rem;
-    font-weight: 400;
+    font-weight: 600;
     font-family: "Regular";
     color: #323232;
   }
@@ -102,6 +106,7 @@
   display: flex;
   justify-content: flex-start;
   gap: 20vw;
+  padding-bottom: 0.5rem;
   border-bottom: 1px solid #E1E1E1;
 }
 .video__data-container-views {

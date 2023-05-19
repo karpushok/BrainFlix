@@ -24,7 +24,8 @@
         margin: 1rem;
         display: flex;
         justify-content: flex-start;
-        gap: 20vw;      
+        gap: 20vw;
+        padding-bottom: 0.5rem;      
         border-bottom: 1px solid $secondary-silver;
 
         &-container {

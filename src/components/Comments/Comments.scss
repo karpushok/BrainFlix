@@ -68,11 +68,10 @@
             margin: 1.5rem;
             margin-top: 0;
 
-            &-profile {
-                &-avatar {
-                    @include avatar-mobile;
-                }
+            &-avatar {
+            @include avatar-desktop;
             }
+            
             &-container {
                 width: 90vw;
                 gap: 1rem;
@@ -106,11 +105,8 @@
         &__input {
             margin: 1.5rem;
             margin-top: 0;
-
-            &-profile {
-                &-avatar {
-                    @include avatar-mobile;
-                }
+            &-avatar {
+            @include avatar-desktop;
             }
             &-container {
                 width: 90vw;

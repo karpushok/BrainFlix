@@ -9,7 +9,7 @@ function Comments({currentVideo}) {
   return (
     <div className="comments">
       <div className="comments__counter">
-        <h3>3 COMMENTS</h3>
+        <h3>3 Comments</h3> 
       </div>
       <h2 className="comments__header">JOIN THE CONVERSATION</h2>
       <div className="comments__input">
