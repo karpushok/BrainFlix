@@ -8,10 +8,8 @@
         margin-top: 0;
         display: flex;
         gap: 1rem;
-        &-profile {
-            &-avatar {
-                @include avatar-mobile;
-            }
+        &-avatar {
+            @include avatar-mobile;
         }
         &-container {
             width: 80vw;

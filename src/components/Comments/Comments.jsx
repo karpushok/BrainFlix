@@ -1,14 +1,11 @@
 import CommentItem from "../CommentItem/CommentItem";
 import React, { useState } from "react";
 import "./Comments.scss";
-
 import avatar from "../../assets/images/Mohan-muruge.jpg";
 
 function Comments({currentVideo}) {
   const comments = currentVideo.comments
   
-  
-
   return (
     <div className="comments">
       <div className="comments__counter">
@@ -20,7 +17,7 @@ function Comments({currentVideo}) {
           <img
             src={avatar}
             alt="logo"
-            className="comments__input-profile-avatar"
+            className="comments__input-avatar"
           />
         </div>
         <div className="comments__input-container">

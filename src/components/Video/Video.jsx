@@ -13,7 +13,10 @@ function Video({ currentVideo }) {
   return (
     <div className="video">
       <div className="video__image">
+        
+        
         <video
+          controls //add video controls
           autoPlay
           loop
           id=""
@@ -21,8 +24,18 @@ function Video({ currentVideo }) {
           poster={currentVideo.image}
         >
           {/* <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type="video/mp4"/> */}
-          <source src={currentVideo.video} type="video/mp4"/>
+          <source src={currentVideo.video} type="video/mp4" />
+          
+
+
         </video>
+
+        {/* <div className="video__controls"> */}
+          {/* div play-btn */}
+          {/* div play-bar */}
+          {/* div play-sound */}
+        {/* </div> */}
+
 
       </div>
       <div className="video__title">

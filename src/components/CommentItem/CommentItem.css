@@ -79,4 +79,24 @@
     font-family: "Regular";
     color: #323232;
   }
+}
+.comment-list__item {
+  margin: 1rem;
+  padding-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  border-top: 1px solid #E1E1E1;
+}
+.comment-list__item-profile {
+  min-width: 2.25rem;
+  height: 2.25rem;
+  background-color: #AFAFAF;
+  border-radius: 50%;
+}
+.comment-list__item-container {
+  width: 100%;
+}
+.comment-list__item-container-header {
+  display: flex;
+  justify-content: space-between;
 }/*# sourceMappingURL=CommentItem.css.map */

@@ -2,6 +2,30 @@
 @import "../../styles/partials/_fonts.scss";
 @import "../../styles/partials/_globals";
 
+.comment-list__item {
+    margin: 1rem;
+    padding-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    border-top: 1px solid $secondary-silver;
+
+    &-profile {
+        min-width: 2.25rem;
+        height: 2.25rem;
+        background-color: $primary-silver;
+        border-radius: 50%;
+    }
+    &-container {
+        width: 100%;
+        &-header {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    // &-paragraph {
+        
+    // }
+}
 
 
 // TABLET STYLES
