@@ -95,9 +95,10 @@
   height: 56vw;
   -o-object-fit: contain;
      object-fit: contain;
+  margin-bottom: 1.5rem;
 }
 .video__title {
-  margin: 1rem;
+  margin: 1.5rem 1rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid #E1E1E1;
 }

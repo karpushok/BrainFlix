@@ -8,22 +8,22 @@ import avatar from "../../assets/images/Mohan-muruge.jpg"
 function Header() {
   return (
     <header className="header">
-      <div className="wrapper">
+      <div className="wrapper"> {/* div is used to wrap the header content*/}
         <div className="header__logo">
-          <img src={logo} alt="logo" className="header__logo-image"/>
+          <img src={logo} alt="logo" className="header__logo-image"/> {/* Render logo image */}
         </div>
         <div className="header__container">
           <div className="header__container-search">
-            <input type="text" placeholder="Search" className="header__container-search-input"/>
+            <input type="text" placeholder="Search" className="header__container-search-input"/> {/* Search input field */}
           </div>
           <div className="header__container-profile">
-            <img src={avatar} alt="Avatar" className="header__container-profile-image" />
+            <img src={avatar} alt="Avatar" className="header__container-profile-image" /> {/* Render avatar image */}
           </div>
         </div>
-        <button className="header__upload">UPLOAD</button>
+        <button className="header__upload">UPLOAD</button> {/* Upload button */}
       </div>
     </header>
   );
 }
 
-export default Header;
+export default Header; //the component is exported as the default export, making it available for use in other components

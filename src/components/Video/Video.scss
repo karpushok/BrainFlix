@@ -12,11 +12,11 @@
         &-object {
            height: 56vw;
            object-fit: contain;
-        //    background-image: url(../../assets/icons/scrub.svg);
+           margin-bottom: 1.5rem;
         }
     }
     &__title {
-        margin: 1rem;
+        margin: 1.5rem 1rem;
         padding-bottom: 0.5rem;
         border-bottom: 1px solid $secondary-silver;
     }

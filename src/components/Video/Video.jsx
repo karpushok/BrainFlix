@@ -8,8 +8,6 @@ function Video({ currentVideo }) {
   const timestamp = new Date(currentVideo.timestamp);
   const formattedDate = timestamp.toLocaleDateString('en-GB'); // Format the date as desired
 
-  // video__player
-
   return (
     <div className="video">
       <div className="video__image">
