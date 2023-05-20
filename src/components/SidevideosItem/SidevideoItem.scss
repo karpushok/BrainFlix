@@ -33,5 +33,10 @@
 @media screen and (min-width: 1280px) {
     .sidevideos__item {
         margin: 0.75rem 1.5rem;
+        &-container {
+            &-title {
+                margin-bottom: 0.5rem;
+            }
+        }
     }  
 }

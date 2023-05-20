@@ -24,4 +24,7 @@
   .sidevideos__item {
     margin: 0.75rem 1.5rem;
   }
+  .sidevideos__item-container-title {
+    margin-bottom: 0.5rem;
+  }
 }/*# sourceMappingURL=SidevideoItem.css.map */
