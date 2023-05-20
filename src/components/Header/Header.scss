@@ -33,6 +33,12 @@
                 background-size: 1.2rem 1.2rem;
                 background-repeat: no-repeat;
                 background-position: 0.5rem;
+                outline: none;
+                &:focus {
+                    border-color: $primary-blue;
+                    border-width: 2px;
+                    
+                }
             }
         }
     }

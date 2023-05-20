@@ -117,7 +117,7 @@
   background-position: 0.5rem;
 }
 .comments__input-container-button:hover {
-  background-color: #0095FF;
+  background-color: #0065AD;
 }
 .comments__input-container-input {
   width: 100%;
@@ -128,8 +128,9 @@
   border-radius: 4px;
   font-family: "Regular";
   padding: 0.75rem;
+  outline: none;
 }
-.comments__input-container-input:active {
+.comments__input-container-input:focus {
   border-color: #0095FF;
   border-width: 2px;
 }

@@ -27,7 +27,7 @@
                 background-repeat: no-repeat;
                 background-position: 0.5rem;
                 &:hover {
-                    background-color: $primary-blue;
+                    background-color: $secondary-darkblue;
                 }
             }
             &-input {
@@ -39,9 +39,11 @@
                 border-radius: 4px;
                 font-family: 'Regular';
                 padding: 0.75rem;
-                &:active {
+                outline: none;
+                &:focus {
                     border-color: $primary-blue;
                     border-width: 2px;
+                    
                 }
             }
         }

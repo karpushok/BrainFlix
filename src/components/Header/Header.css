@@ -118,6 +118,11 @@
   background-size: 1.2rem 1.2rem;
   background-repeat: no-repeat;
   background-position: 0.5rem;
+  outline: none;
+}
+.header__container-search-input:focus {
+  border-color: #0095FF;
+  border-width: 2px;
 }
 .header__upload {
   margin-left: 1rem;
