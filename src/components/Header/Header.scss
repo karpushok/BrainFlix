@@ -14,7 +14,7 @@
     &__container {
         display: flex;
         justify-content: space-between;
-        gap: 1.5rem;
+        gap: 0.5rem;
         margin: 1rem;
         &-profile {
             &-image {
@@ -23,7 +23,7 @@
         }
         &-search { // styles for search input
             &-input {
-                width: 75vw;
+                width: 80vw;
                 height: 2.25rem;
                 background-color: $secondary-white;
                 border: 1px solid $primary-silver;

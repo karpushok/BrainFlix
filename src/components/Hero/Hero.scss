@@ -2,7 +2,7 @@
 @import "../../styles/partials/_colors.scss";
 @import "../../styles/partials/_fonts.scss";
 
-.video {
+.hero {
     &__image {
         display: flex;
         justify-content: center;
@@ -19,32 +19,17 @@
 
 // TABLET STYLES
 
-@media ((min-width: 768px) and (max-width: 1279px)){
-    .video {
-        &__data{
-            margin: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-                &-container {           
-                    display: flex;
-                    justify-content: space-between;
-                    gap: 2rem;
-                    align-items: center;
-                }
-        }
-    }
-}
+@media ((min-width: 768px) and (max-width: 1279px)){}
 
 // DESKTOP STYLES
 
 @media screen and (min-width: 1280px) {
-    .video {
+    .hero {
         &__image {
             height: 45vw; // screen 16:9 setting
             &-object {
                height: 45vw;
                object-fit: contain;
-            //    background-image: url(../../assets/icons/scrub.svg);
             }
         }
     }

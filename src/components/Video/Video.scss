@@ -3,18 +3,6 @@
 @import "../../styles/partials/_fonts.scss";
 
 .video {
-    &__image {
-        display: flex;
-        justify-content: center;
-        width: 100vw;
-        background-color: $secondary-black;
-        height: 56vw; // screen 16:9 setting
-        &-object {
-           height: 56vw;
-           object-fit: contain;
-           margin-bottom: 1.5rem;
-        }
-    }
     &__title {
         margin: 1.5rem 1rem;
         padding-bottom: 0.5rem;
@@ -82,16 +70,10 @@
 
 @media screen and (min-width: 1280px) {
     .video {
-        &__image {
-            height: 45vw; // screen 16:9 setting
-            &-object {
-               height: 45vw;
-               object-fit: contain;
-            //    background-image: url(../../assets/icons/scrub.svg);
-            }
-        }
         &__data{
-            margin: 1.5rem;
+            margin: 1.5rem 0 1.5rem 1.5rem;
+            padding-right: 1.5rem;
+            gap: 0;
             display: flex;
             justify-content: space-between;
                 &-container {           
@@ -103,7 +85,7 @@
         }
         &__title {
             border-bottom: none;
-            margin: 3rem 1.5rem 1.5rem 1.5rem;
+            margin: 2rem 1.5rem 1.5rem 1.5rem;
         }
         &__description {
             margin: 1.5rem;

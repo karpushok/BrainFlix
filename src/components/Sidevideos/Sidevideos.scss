@@ -17,4 +17,11 @@
 
 // DESKTOP STYLES
 
-@media screen and (min-width: 1280px) {}
+@media screen and (min-width: 1280px) {
+    .sidevideos{
+        &__header {
+        margin-left: 1.5rem;
+        border-top: none;
+        }
+    }
+}

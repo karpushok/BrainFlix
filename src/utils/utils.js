@@ -1,7 +1,7 @@
 const getDate = (timestamp) => {
   return new Date(timestamp).toLocaleDateString('en-GB') // Convert timestamp to a localized date string
 }
-
+// updating the timestamp in the comments section and video details to reflect when it was posted in a more human-readable format
 function transformDateAgo (value, args) {
   if (value) {
       const seconds = Math.floor((+new Date() - +new Date(value)) / 1000);

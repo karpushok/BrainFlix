@@ -9,7 +9,7 @@ function Comments({ currentVideo }) {
   return (
     <div className="comments">
       <div className="comments__counter">
-        <h3>{comments.length} Comments</h3> {/* Static comment count */}
+        <h3>{comments.length} Comments</h3> {/* Dynamic comment count */}
       </div>
       <h2 className="comments__header">JOIN THE CONVERSATION</h2>
       {/* Comments section header */}

@@ -14,7 +14,7 @@
 @media screen and (min-width: 768px) {
   h1 {
     font-size: 2.1rem;
-    line-height: 1.25rem;
+    line-height: 2.5rem;
     font-weight: 700;
     font-family: "Bold";
     color: #323232;
@@ -92,4 +92,11 @@
   margin: 1rem;
   padding-top: 1rem;
   border-top: 1px solid #E1E1E1;
+}
+
+@media screen and (min-width: 1280px) {
+  .sidevideos__header {
+    margin-left: 1.5rem;
+    border-top: none;
+  }
 }/*# sourceMappingURL=Sidevideos.css.map */

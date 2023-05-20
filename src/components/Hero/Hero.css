@@ -13,7 +13,7 @@
 @media screen and (min-width: 768px) {
   h1 {
     font-size: 2.1rem;
-    line-height: 1.25rem;
+    line-height: 2.5rem;
     font-weight: 700;
     font-family: "Bold";
     color: #323232;
@@ -84,38 +84,25 @@
     color: #323232;
   }
 }
-.video__image {
+.hero__image {
   display: flex;
   justify-content: center;
   width: 100vw;
   background-color: #000000;
   height: 56vw;
 }
-.video__image-object {
+.hero__image-object {
   height: 56vw;
   -o-object-fit: contain;
      object-fit: contain;
   margin-bottom: 1.5rem;
 }
 
-@media ((min-width: 768px) and (max-width: 1279px)) {
-  .video__data {
-    margin: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-  }
-  .video__data-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    align-items: center;
-  }
-}
 @media screen and (min-width: 1280px) {
-  .video__image {
+  .hero__image {
     height: 45vw;
   }
-  .video__image-object {
+  .hero__image-object {
     height: 45vw;
     -o-object-fit: contain;
        object-fit: contain;

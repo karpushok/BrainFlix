@@ -4,14 +4,14 @@ import React, { useState } from "react";
 function Hero ({ currentVideo }) {
 
   return (
-    <div className="video">
-      <div className="video__image">
+    <div className="hero">
+      <div className="hero__image">
         <video
           controls //add video controls
           autoPlay
           loop
           id=""
-          className="video__image-object"
+          className="hero__image-object"
           poster={currentVideo.image}
         >
         <source src={currentVideo.video} type="video/mp4" />

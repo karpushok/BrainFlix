@@ -51,6 +51,8 @@
 @media screen and (min-width: 1280px) {
     .comment-list__item {
         margin: 1.5rem;
+        margin-right: 0;
+        padding-right: 1.5rem;
         padding-top: 1rem;
         display: flex;
         gap: 1rem;
