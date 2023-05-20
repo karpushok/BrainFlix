@@ -131,6 +131,7 @@
 }
 .comments__input-container-input:active {
   border-color: #0095FF;
+  border-width: 2px;
 }
 .comments__counter {
   margin-left: 1rem;

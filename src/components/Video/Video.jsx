@@ -10,7 +10,7 @@ function Video({ currentVideo }) {
 
   return (
     <div className="video">
-      <div className="video__image">
+      {/* <div className="video__image">
         <video
           controls //add video controls
           autoPlay
@@ -21,7 +21,7 @@ function Video({ currentVideo }) {
         >
         <source src={currentVideo.video} type="video/mp4" />
         </video>
-      </div>
+      </div> */}
       <div className="video__title">
         <h1>{currentVideo.title}</h1>
       </div>

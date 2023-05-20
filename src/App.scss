@@ -7,8 +7,19 @@
 }
 
 
-// @media screen and (width >= 768px) {
-//   .wrapper {
-//     display: flex; // check
-//   }
-// }
+@media screen and (width >= 1280px) {
+// divide to two columns
+  .main-content {
+    display: flex;
+    justify-content: center;
+  }
+
+  .left {
+    max-width: 50%;
+    border-right: 1px solid $primary-silver;
+  }
+  .sidevideos {
+    width: 22rem;
+  }
+
+}
