@@ -102,7 +102,7 @@
 .comments__input-container {
   width: 80vw;
 }
-.comments__input-container-button {
+.comments__input-button {
   margin-top: 1rem;
   margin-bottom: 1rem;
   width: 100%;
@@ -116,10 +116,10 @@
   background-repeat: no-repeat;
   background-position: 0.5rem;
 }
-.comments__input-container-button:hover {
+.comments__input-button:hover {
   background-color: #0065AD;
 }
-.comments__input-container-input {
+.comments__input-input {
   width: 100%;
   height: 7rem;
   align-items: start;
@@ -130,7 +130,7 @@
   padding: 0.75rem;
   outline: none;
 }
-.comments__input-container-input:focus {
+.comments__input-input:focus {
   border-color: #0095FF;
   border-width: 2px;
 }
@@ -167,12 +167,12 @@
     gap: 1rem;
     display: flex;
   }
-  .comments__input-container-button {
+  .comments__input-button {
     width: 12rem;
     height: 2.5rem;
     margin-top: 0;
   }
-  .comments__input-container-input {
+  .comments__input-input {
     width: 100%;
     height: 2.5rem;
   }
@@ -204,12 +204,12 @@
     gap: 1rem;
     display: flex;
   }
-  .comments__input-container-button {
+  .comments__input-button {
     width: 12rem;
     height: 2.5rem;
     margin-top: 0;
   }
-  .comments__input-container-input {
+  .comments__input-input {
     width: 100%;
     height: 2.5rem;
   }

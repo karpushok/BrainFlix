@@ -3,46 +3,55 @@
 @import "../../styles/partials/_globals";
 
 .header {
-    &__logo { // styles for logo image
+    &__logo {
+        // styles for logo image
         text-align: center;
         margin-top: 1rem;
+
         &-image {
             max-width: 120px;
             max-height: 25px;
         }
     }
+
     &__container {
         display: flex;
         justify-content: space-between;
         gap: 0.5rem;
         margin: 1rem;
-        &-profile {
-            &-image {
-                @include avatar-mobile;
-            }
+    }
+
+    &__profile {
+        &-image {
+            @include avatar-mobile;
         }
-        &-search { // styles for search input
-            &-input {
-                width: 80vw;
-                height: 2.25rem;
-                background-color: $secondary-white;
-                border: 1px solid $primary-silver;
-                border-radius: 4px;
-                padding-left: 2.5rem;
-                background-image: url(../../assets/icons/search.svg);
-                background-size: 1.2rem 1.2rem;
-                background-repeat: no-repeat;
-                background-position: 0.5rem;
-                outline: none;
-                &:focus {
-                    border-color: $primary-blue;
-                    border-width: 2px;
-                    
-                }
+    }
+
+    &__search {
+
+        // styles for search input
+        &-input {
+            width: 80vw;
+            height: 2.25rem;
+            background-color: $secondary-white;
+            border: 1px solid $primary-silver;
+            border-radius: 4px;
+            padding-left: 2.5rem;
+            background-image: url(../../assets/icons/search.svg);
+            background-size: 1.2rem 1.2rem;
+            background-repeat: no-repeat;
+            background-position: 0.5rem;
+            outline: none;
+
+            &:focus {
+                border-color: $primary-blue;
+                border-width: 2px;
             }
         }
     }
-    &__upload { // styles for upload button
+
+    &__upload {
+        // styles for upload button
         margin-left: 1rem;
         margin-bottom: 1rem;
         width: calc(100% - 2rem);
@@ -61,7 +70,7 @@
 
 // TABLET STYLES
 
-@media ((min-width: 768px) and (max-width: 1279px)){
+@media ((min-width: 768px) and (max-width: 1279px)) {
     .wrapper {
         display: flex;
         justify-content: space-between;
@@ -71,31 +80,41 @@
         align-items: center;
         position: relative
     }
+
     .header {
-        &__logo { // styles for logo image
+        &__logo {
+
+            // styles for logo image
             &-image {
                 margin-bottom: 1rem;
                 margin-top: 0;
             }
         }
-        &__container {
-            &-profile {
-                position: absolute;
-                right: 1rem;
-                top: 1rem;
-                &-image {
-                    @include avatar-desktop;
-                }
+
+        &__profile {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+
+            &-image {
+                @include avatar-desktop;
             }
-            &-search { // styles for search input
-                &-input {
-                    height: 2.5rem;
-                    width: 50vw;
-                    margin: 0;
-                }
+
+
+        }
+
+        &__search {
+
+            // styles for search input
+            &-input {
+                height: 2.5rem;
+                width: 50vw;
+                margin: 0;
             }
         }
-        &__upload { // styles for upload button
+
+        &__upload {
+            // styles for upload button
             width: 10rem;
             margin: 0;
             height: 2.5rem;
@@ -116,38 +135,44 @@
         align-items: center;
         position: relative
     }
+
     .header {
-        &__logo { // styles for logo image
+        &__logo {
+
+            // styles for logo image
             &-image {
                 margin-bottom: 1rem;
                 margin-top: 0;
             }
         }
-        &__container {
 
-            &-profile {
-                &-image {
-                    @include avatar-desktop;
-                }
-                position: absolute;
-                right: 1rem;
-                top: 1rem;
-
+        &__profile {
+            &-image {
+                @include avatar-desktop;
             }
-            &-search { // styles for search input
-                &-input {
-                    height: 2.5rem;
-                    width: 50vw;
-                    margin: 0;
-                }
+
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+        }
+
+        &__search {
+
+            // styles for search input
+            &-input {
+                height: 2.5rem;
+                width: 50vw;
+                margin: 0;
             }
         }
-        &__upload { // styles for upload button
+
+        &__upload {
+            // styles for upload button
             width: 10rem;
             margin: 0;
             height: 2.5rem;
             margin-right: 4rem;
         }
 
-    } 
+    }
 }

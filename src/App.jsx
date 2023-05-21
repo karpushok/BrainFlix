@@ -8,6 +8,32 @@ import Sidevideos from './components/Sidevideos/Sidevideos';
 import data from "./data/video-details.json";
 
 
+// TODO 
+/**
+  * use semantic tags where possible
+  * 
+  * + header 
+  * 
+  * + nav
+  * 
+  * + section
+  * 
+  * + main
+  * 
+  * + classNames fix
+  * 
+  * comment color change 
+  * 
+  * merge
+  * 
+  * public
+  * 
+  * packet zip
+  * 
+  * 
+  * 
+  **/
+
 function App() {
 
   const [currentVideo, setCurrentVideo] = useState(data[0])
@@ -17,13 +43,13 @@ function App() {
     <div className="container">
       <Header/>
       <Hero currentVideo={currentVideo} />
-      <div className="main-content">
-        <aside className="left">
+      <main className="main-content">
+        <div className="left">
           <Video currentVideo={currentVideo} />
           <Comments currentVideo={currentVideo} />
-        </aside>
+        </div>
         <Sidevideos videoData={filteredVideos} setCurrentVideo={setCurrentVideo} />
-      </div>
+      </main>
     </div>
   );
 }

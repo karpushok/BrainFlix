@@ -7,21 +7,21 @@ function CommentItem({ comment: commentItem }) {
   const { name, comment, timestamp } = commentItem;
 
   return (
-    <div className="comment-list__item">
-      <div className="comment-list__item-profile"></div>
-      <div className="comment-list__item-container">
-        <div className="comment-list__item-container-header">
-          <div className="comment-list__item-container-name">
+    <div className="comment-item">
+      <div className="comment-item__profile"></div>
+      <div className="comment-item__container">
+        <div className="comment-item__header">
+          <div className="comment-item__name">
             <h3>{name}</h3>
           </div>
           {/* Render the name of the commenter */}
-          <div className="comment-list__item-container-date">
+          <div className="comment-item__date">
             {/* <h4>{getDate(timestamp)}</h4> */}
             <h4>{transformDateAgo(timestamp)}</h4>
           </div>
           {/* Render the formatted comment date */}
         </div>
-        <div className="comment-list__item-paragraph">
+        <div className="comment-item__paragraph">
           <p>{comment}</p>
         </div>
         {/* Render the comment content */}

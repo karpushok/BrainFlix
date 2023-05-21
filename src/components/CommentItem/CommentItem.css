@@ -84,41 +84,42 @@
     color: #323232;
   }
 }
-.comment-list__item {
+.comment-item {
   margin: 1rem;
   padding-top: 1rem;
   display: flex;
   gap: 1rem;
   border-top: 1px solid #E1E1E1;
 }
-.comment-list__item-profile {
+.comment-item__profile {
   min-width: 2.25rem;
   height: 2.25rem;
   background-color: #AFAFAF;
   border-radius: 50%;
 }
-.comment-list__item-container {
+.comment-item__container {
   width: 100%;
 }
-.comment-list__item-container-header {
+.comment-item__header {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 0.5rem;
 }
 
-.comment-list__item {
+.comment-item {
   margin: 1.5rem;
   padding-top: 1rem;
   display: flex;
   gap: 1rem;
   border-top: 1px solid #E1E1E1;
 }
-.comment-list__item-profile {
+.comment-item__profile {
   min-width: 2.5rem;
   height: 2.5rem;
 }
 
 @media screen and (min-width: 1280px) {
-  .comment-list__item {
+  .comment-item {
     margin: 1.5rem;
     margin-right: 0;
     padding-right: 1.5rem;
@@ -127,7 +128,7 @@
     gap: 1rem;
     border-top: 1px solid #E1E1E1;
   }
-  .comment-list__item-profile {
+  .comment-item__profile {
     min-width: 2.5rem;
     height: 2.5rem;
   }

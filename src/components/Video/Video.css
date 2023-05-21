@@ -97,26 +97,26 @@
   padding-bottom: 0.5rem;
   border-bottom: 1px solid #E1E1E1;
 }
-.video__data-container-views {
+.video__data-views {
   display: flex;
   justify-content: flex-start;
   gap: 0.5rem;
   padding-bottom: 0.5rem;
 }
-.video__data-container-likes {
+.video__data-likes {
   display: flex;
   justify-content: flex-start;
   gap: 0.5rem;
   padding-bottom: 0.5rem;
   gap: 0.7rem;
 }
-.video__data-container-date {
+.video__data-date {
   padding-bottom: 0.5rem;
 }
-.video__data-container-date-output {
+.video__data-date-output {
   color: #AFAFAF;
 }
-.video__data-container-channel {
+.video__data-channel {
   padding-bottom: 0.5rem;
 }
 .video__description {

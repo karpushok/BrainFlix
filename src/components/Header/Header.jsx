@@ -13,11 +13,11 @@ function Header() {
           <img src={logo} alt="logo" className="header__logo-image"/> {/* Render logo image */}
         </div>
         <div className="header__container">
-          <div className="header__container-search">
-            <input type="text" placeholder="Search" className="header__container-search-input"/> {/* Search input field */}
+          <div className="header__search">
+            <input type="text" placeholder="Search" className="header__search-input"/> {/* Search input field */}
           </div>
-          <div className="header__container-profile">
-            <img src={avatar} alt="Avatar" className="header__container-profile-image" /> {/* Render avatar image */}
+          <div className="header__profile">
+            <img src={avatar} alt="Avatar" className="header__profile-image" /> {/* Render avatar image */}
           </div>
         </div>
         <button className="header__upload">UPLOAD</button> {/* Upload button */}

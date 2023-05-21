@@ -1,44 +1,42 @@
 import "./Video.css";
-import React, { useState } from "react";
+import React from "react";
 
 import likesImage from "../../assets/icons/likes.svg";
 import viewsImage from "../../assets/icons/views.svg";
-import { getDate, transformDateAgo } from "../../utils/utils";
-
+import { transformDateAgo } from "../../utils/utils";
 
 function Video({ currentVideo }) {
   const { title, channel, timestamp, views, likes, description } = currentVideo;
 
   return (
-    <div className="video">
+    <section className="video">
       <div className="video__title">
         <h1>{title}</h1>
       </div>
 
       <div className="video__data">
         <div className="video__data-container">
-          <div className="video__data-container-channel">
+          <div className="video__data-channel">
             <h3>By {channel}</h3>
           </div>
-          <div className="video__data-container-date">
-            <h4 className="video__data-container-date-output">
-              {/* {getDate(timestamp)} */}
+          <div className="video__data-date">
+            <h4 className="video__data-date-output">
               {transformDateAgo(timestamp)}
             </h4>
           </div>
         </div>
         <div className="video__data-container">
-          <div className="video__data-container-views">
+          <div className="video__data-views">
             <img
               src={viewsImage}
-              className="video__data-container-views-image"
+              className="video__data-views-image"
             />
             <h4>{views}</h4>
           </div>
-          <div className="video__data-container-likes">
+          <div className="video__data-likes">
             <img
               src={likesImage}
-              className="video__data-container-likes-image"
+              className="video__data-likes-image"
             />
             <h4>{likes}</h4>
           </div>
@@ -47,7 +45,7 @@ function Video({ currentVideo }) {
       <div className="video__description">
         <p>{description}</p>
       </div>
-    </div>
+    </section>
   );
 }
 
