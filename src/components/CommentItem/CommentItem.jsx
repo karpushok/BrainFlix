@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./CommentItem.scss";
+import "./CommentItem.css";
 import { getDate, transformDateAgo } from "../../utils/utils";
 
 function CommentItem({ comment: commentItem }) {

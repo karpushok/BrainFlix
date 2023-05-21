@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import "./Header.scss"
+import "./Header.css"
 
 import logo from '../../assets/images/BrainFlix-logo.svg'
 import avatar from "../../assets/images/Mohan-muruge.jpg"

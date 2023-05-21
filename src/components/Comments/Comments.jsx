@@ -1,6 +1,6 @@
 import CommentItem from "../CommentItem/CommentItem";
 import React, { useState } from "react";
-import "./Comments.scss";
+import "./Comments.css";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
 
 function Comments({ currentVideo }) {
