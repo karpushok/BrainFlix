@@ -1,28 +1,44 @@
-@use './colors';
+@use "./colors";
 
 @mixin counter-margins {
-    display: flex;
-    justify-content: flex-start;
-    gap: 0.5rem;
-    padding-bottom: 0.5rem;
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 @mixin avatar-mobile {
-    width: 2.25rem;
-    height: 2.25rem;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 50%;
+  width: 2.25rem;
+  height: 2.25rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
 }
 
 @mixin avatar-desktop {
-    width: 2.5rem;
-    height: 2.5rem;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
 }
 
 @mixin border {
-    border: 1px solid $primary-silver;
+  border: 1px solid $primary-silver;
+}
+
+@mixin input-comment {
+  width: calc(100%);
+  height: 7rem;
+  align-items: start;
+  background-color: $secondary-white;
+  border-radius: 4px;
+  font-family: "Regular";
+  padding: 0.75rem;
+  outline: none;
+}
+
+@mixin input-desktop-tablet {
+  width: calc(100%);
+  height: 2.5rem;
 }
