@@ -14,17 +14,13 @@ function CommentItem({ comment: commentItem }) {
           <div className="comment-item__name">
             <h3>{name}</h3>
           </div>
-          {/* Render the name of the commenter */}
           <div className="comment-item__date">
-            {/* <h4>{getDate(timestamp)}</h4> */}
             <h4>{transformDateAgo(timestamp)}</h4>
           </div>
-          {/* Render the formatted comment date */}
         </div>
         <div className="comment-item__paragraph">
           <p>{comment}</p>
         </div>
-        {/* Render the comment content */}
       </div>
     </div>
   );

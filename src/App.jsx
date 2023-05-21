@@ -7,35 +7,7 @@ import Video from './components/Video/Video';
 import Sidevideos from './components/Sidevideos/Sidevideos';
 import data from "./data/video-details.json";
 
-
-// TODO 
-/**
-  * use semantic tags where possible
-  * 
-  * + header 
-  * 
-  * + nav
-  * 
-  * + section
-  * 
-  * + main
-  * 
-  * + classNames fix
-  * 
-  * comment color change 
-  * 
-  * merge
-  * 
-  * public
-  * 
-  * packet zip
-  * 
-  * 
-  * 
-  **/
-
 function App() {
-
   const [currentVideo, setCurrentVideo] = useState(data[0])
   const filteredVideos = data.filter((video) => video.id !== currentVideo.id)
 
