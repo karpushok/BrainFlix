@@ -31,9 +31,7 @@ function Comments({ currentVideo }) {
         <div className="comments__input-container">
           <textarea
             className={
-              hasChanged
-                ? "comments__input-input--changed"
-                : "comments__input-input"
+              hasChanged ? "comments__input-input--changed" : "comments__input-input"
             }
             id="comment"
             name="comment"

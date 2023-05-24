@@ -10,7 +10,9 @@ function Header() {
     <header className="header">
       <div className="wrapper">
         <div className="header__logo">
+        <a href="#"> 
           <img src={logo} alt="logo" className="header__logo-image"/>
+        </a>  
         </div>
         <div className="header__container">
           <div className="header__search">
@@ -27,3 +29,5 @@ function Header() {
 }
 
 export default Header;
+
+// add correct link to logo image
