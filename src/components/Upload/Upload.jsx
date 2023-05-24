@@ -1,5 +1,4 @@
-import Header from "../Header/Header";
-import React, { useState } from "react";
+import React from "react";
 import "./Upload.css";
 import Preview from "../../assets/images/Upload-video-preview.jpg";
 
@@ -22,9 +21,9 @@ function Upload() {
             />
           </div>
         </div>
-        <div className="upload__form">
+        <form className="upload__form">
           <div className="upload__subheader">
-            <h2 className="upload__subheader-text">TITLE YOUR VIDEO</h2>
+            <label className="upload__subheader-text" for='title'>TITLE YOUR VIDEO</label>
           </div>
           <div className="upload__name">
             <input
@@ -36,7 +35,7 @@ function Upload() {
             />
           </div>
           <div className="upload__subheader">
-            <h2 className="upload__subheader-text">ADD A VIDEO DESCRIPTION</h2>
+            <label className="upload__subheader-text" for='description'>ADD A VIDEO DESCRIPTION</label>
           </div>
           <div className="upload__description">
             <textarea
@@ -45,7 +44,7 @@ function Upload() {
               placeholder="Add a description to your video"
             ></textarea>
           </div>
-        </div>
+        </form>
       </div>
     </section>
   );
