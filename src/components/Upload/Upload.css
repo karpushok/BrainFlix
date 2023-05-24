@@ -149,7 +149,7 @@
 }
 .upload__name-input:focus {
   border-color: #0095FF;
-  border-width: 1px;
+  border-width: 2px;
 }
 .upload__description-input {
   width: 100%;
@@ -163,7 +163,7 @@
 }
 .upload__description-input:focus {
   border-color: #0095FF;
-  border-width: 1px;
+  border-width: 2px;
 }
 
 @media ((min-width: 768px) and (max-width: 1279px)) {
@@ -173,7 +173,7 @@
   .upload__hero {
     padding-top: 1.5rem;
     margin: 1rem;
-    border-top: 1px solid #AFAFAF;
+    border-top: 1px solid #E1E1E1;
   }
   .upload__preview-image {
     width: 50%;
@@ -185,7 +185,7 @@
     margin: 2rem 1rem;
     padding-top: 1rem;
     position: relative;
-    border-top: 1px solid #AFAFAF;
+    border-top: 1px solid #E1E1E1;
   }
   .upload__button-input {
     width: 10rem;
@@ -204,7 +204,7 @@
   .upload__header {
     margin: 0 1rem;
     padding-left: 0;
-    border-bottom: 1px solid #AFAFAF;
+    border-bottom: 1px solid #E1E1E1;
   }
   .upload__container {
     display: flex;
@@ -229,7 +229,7 @@
     margin: 2rem 1rem;
     padding-top: 1rem;
     position: relative;
-    border-top: 1px solid #AFAFAF;
+    border-top: 1px solid #E1E1E1;
   }
   .upload__button-input {
     width: 10rem;

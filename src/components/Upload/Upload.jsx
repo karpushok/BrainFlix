@@ -21,7 +21,7 @@ function Upload() {
             />
           </div>
         </div>
-        
+
         <form className="upload__form">
           <div className="upload__subheader">
             <label className="upload__subheader-text" for="title">
@@ -54,10 +54,7 @@ function Upload() {
         </form>
       </div>
       <div className="upload__button">
-        <button
-          className={"upload__button-input"}
-          type="submit"
-        >
+        <button className={"upload__button-input"} type="submit">
           PUBLISH
         </button>
         <a href="#" className="upload__cancel">

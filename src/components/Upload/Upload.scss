@@ -53,7 +53,7 @@
     outline: none;
     &:focus {
       border-color: $primary-blue;
-      border-width: 1px;
+      border-width: 2px;
     }
   }
   &__description-input {
@@ -67,7 +67,7 @@
     outline: none;
     &:focus {
       border-color: $primary-blue;
-      border-width: 1px;
+      border-width: 2px;
     }
   }
 }
@@ -80,7 +80,7 @@
     &__hero {
       padding-top: 1.5rem;
       margin: 1rem;
-      border-top: 1px solid $primary-silver;
+      border-top: 1px solid $secondary-silver;
     }
     &__preview-image {
       width: calc(50%);
@@ -93,7 +93,7 @@
       padding-top: 1rem;
 
       position: relative;
-      border-top: 1px solid $primary-silver;
+      border-top: 1px solid $secondary-silver;
       &-input {
         width: 10rem;
         margin-right: 0;
@@ -113,27 +113,24 @@
   .upload {
     margin: 0 5rem;
     &__header {
-        margin: 0 1rem;
-        padding-left: 0;
-        border-bottom: 1px solid $primary-silver;
+      margin: 0 1rem;
+      padding-left: 0;
+      border-bottom: 1px solid $secondary-silver;
     }
-
     &__container {
-        display: flex;
-        justify-content: center;
-        
+      display: flex;
+      justify-content: center;
     }
     &__hero {
-        width: 30%;
+      width: 30%;
     }
     &__form {
-        width: 70%;
+      width: 70%;
     }
     &__preview-image {
       width: calc(100%);
       height: 13rem;
       object-fit: cover;
-
     }
     &__button {
       display: flex;
@@ -143,17 +140,17 @@
       padding-top: 1rem;
 
       position: relative;
-      border-top: 1px solid $primary-silver;
+      border-top: 1px solid $secondary-silver;
       &-input {
         width: 10rem;
         margin-right: 0;
         height: 2.5rem;
-        }
       }
+    }
     &__cancel {
       margin-bottom: 0;
       position: absolute;
       right: 15rem;
     }
-}
+  }
 }
