@@ -46,6 +46,13 @@
     font-family: "Regular";
     color: #323232;
   }
+  label {
+    font-size: 1rem;
+    line-height: 1.375rem;
+    font-weight: 700;
+    font-family: "Demi";
+    color: #AFAFAF;
+  }
 }
 @media screen and (max-width: 767px) {
   h1 {
@@ -82,6 +89,13 @@
     font-weight: 600;
     font-family: "Regular";
     color: #323232;
+  }
+  label {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 700;
+    font-family: "Demi";
+    color: #AFAFAF;
   }
 }
 .comments__input {

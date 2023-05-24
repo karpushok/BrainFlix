@@ -11,7 +11,7 @@ function Upload() {
       <div className="upload__container">
         <div className="upload__hero">
           <div className="upload__subheader">
-            <h2 className="upload__subheader-text">VIDEO THUMBNAIL</h2>
+            <label className="upload__subheader-text">VIDEO THUMBNAIL</label>
           </div>
           <div className="upload__preview">
             <img
@@ -23,7 +23,9 @@ function Upload() {
         </div>
         <form className="upload__form">
           <div className="upload__subheader">
-            <label className="upload__subheader-text" for='title'>TITLE YOUR VIDEO</label>
+            <label className="upload__subheader-text" for="title">
+              TITLE YOUR VIDEO
+            </label>
           </div>
           <div className="upload__name">
             <input
@@ -35,16 +37,32 @@ function Upload() {
             />
           </div>
           <div className="upload__subheader">
-            <label className="upload__subheader-text" for='description'>ADD A VIDEO DESCRIPTION</label>
+            <label className="upload__subheader-text" for="description">
+              ADD A VIDEO DESCRIPTION
+            </label>
           </div>
           <div className="upload__description">
             <textarea
               id="description"
+              type="text"
               name="text"
+              class="upload__description-input"
               placeholder="Add a description to your video"
             ></textarea>
           </div>
         </form>
+      </div>
+      <div className="upload__button">
+        <button
+          className={"upload__button-input"}
+          type="submit"
+          // onClick={handleButtonClick}
+        >
+          PUBLISH
+        </button>
+        <a href="#" className="upload__cancel">
+          CANCEL
+        </a>
       </div>
     </section>
   );
