@@ -4,20 +4,24 @@
 
 .upload {
   &__header {
-    border-top: 1px solid $primary-silver;
     padding: 2rem 1rem 1rem 1rem;
   }
+  &__hero {
+    margin: 1rem;
+  }
   &__subheader {
-    margin: 0.5rem 1rem;
+    margin-bottom: 1rem;
   }
   &__preview-image {
-    width: calc(100% - 2rem);
-    margin-left: 1rem;
+    width: calc(100%);
     border-radius: 4px;
   }
-  &__button-input {
+  &__form {
     margin: 1rem;
+  }
+  &__button-input {
     width: calc(100% - 2rem);
+    margin: 1rem;
     height: 2.5rem;
     color: white;
     background-color: $primary-blue;
@@ -38,8 +42,7 @@
     margin-bottom: 2rem;
   }
   &__name-input {
-    width: calc(100% - 2rem);
-    margin-left: 1rem;
+    width: calc(100%);
     margin-bottom: 1rem;
     height: 2.5rem;
     background-color: $secondary-white;
@@ -49,13 +52,12 @@
     padding: 0.75rem;
     outline: none;
     &:focus {
-        border-color: $primary-blue;
-        border-width: 1px;
+      border-color: $primary-blue;
+      border-width: 1px;
     }
   }
   &__description-input {
-    width: calc(100% - 2rem);
-    margin-left: 1rem;
+    width: calc(100%);
     height: 7rem;
     background-color: $secondary-white;
     border: 1px solid $primary-silver;
@@ -64,9 +66,94 @@
     padding: 0.75rem;
     outline: none;
     &:focus {
-        border-color: $primary-blue;
-        border-width: 1px;
+      border-color: $primary-blue;
+      border-width: 1px;
     }
   }
+}
 
+// TABLET STYLES
+
+@media ((min-width: 768px) and (max-width: 1279px)) {
+  .upload {
+    margin: 0.5rem;
+    &__hero {
+      padding-top: 1.5rem;
+      margin: 1rem;
+      border-top: 1px solid $primary-silver;
+    }
+    &__preview-image {
+      width: calc(50%);
+    }
+    &__button {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin: 2rem 1rem;
+      padding-top: 1rem;
+
+      position: relative;
+      border-top: 1px solid $primary-silver;
+      &-input {
+        width: 10rem;
+        margin-right: 0;
+      }
+    }
+    &__cancel {
+      margin-bottom: 0;
+      position: absolute;
+      right: 15rem;
+    }
+  }
+}
+
+// DESKTOP STYLES
+
+@media screen and (min-width: 1280px) {
+  .upload {
+    margin: 0 5rem;
+    &__header {
+        margin: 0 1rem;
+        padding-left: 0;
+        border-bottom: 1px solid $primary-silver;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        
+    }
+    &__hero {
+        width: 30%;
+    }
+    &__form {
+        width: 70%;
+    }
+    &__preview-image {
+      width: calc(100%);
+      height: 13rem;
+      object-fit: cover;
+
+    }
+    &__button {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin: 2rem 1rem;
+      padding-top: 1rem;
+
+      position: relative;
+      border-top: 1px solid $primary-silver;
+      &-input {
+        width: 10rem;
+        margin-right: 0;
+        height: 2.5rem;
+        }
+      }
+    &__cancel {
+      margin-bottom: 0;
+      position: absolute;
+      right: 15rem;
+    }
+}
 }

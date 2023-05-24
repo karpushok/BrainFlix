@@ -21,6 +21,7 @@ function Upload() {
             />
           </div>
         </div>
+        
         <form className="upload__form">
           <div className="upload__subheader">
             <label className="upload__subheader-text" for="title">
@@ -56,7 +57,6 @@ function Upload() {
         <button
           className={"upload__button-input"}
           type="submit"
-          // onClick={handleButtonClick}
         >
           PUBLISH
         </button>

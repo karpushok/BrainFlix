@@ -98,6 +98,9 @@
     color: #AFAFAF;
   }
 }
+.header {
+  border-bottom: 1px solid #AFAFAF;
+}
 .header__logo {
   text-align: center;
   margin-top: 1rem;
@@ -122,7 +125,7 @@
   border-radius: 50%;
 }
 .header__search-input {
-  width: 80vw;
+  width: 75vw;
   height: 2.25rem;
   background-color: #FAFAFA;
   border: 1px solid #AFAFAF;
@@ -198,8 +201,8 @@
     display: flex;
     justify-content: space-between;
     margin: auto;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    margin-left: 6rem;
+    margin-right: 6rem;
     align-items: center;
     position: relative;
   }

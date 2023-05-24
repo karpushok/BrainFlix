@@ -3,6 +3,7 @@
 @import "../../styles/partials/_globals";
 
 .header {
+    border-bottom: 1px solid $primary-silver;
     &__logo {
         // styles for logo image
         text-align: center;
@@ -31,7 +32,7 @@
 
         // styles for search input
         &-input {
-            width: 80vw;
+            width: 75vw;
             height: 2.25rem;
             background-color: $secondary-white;
             border: 1px solid $primary-silver;
@@ -130,8 +131,8 @@
         display: flex;
         justify-content: space-between;
         margin: auto;
-        margin-left: 1.5rem;
-        margin-right: 1.5rem;
+        margin-left: 6rem;
+        margin-right: 6rem;
         align-items: center;
         position: relative
     }
