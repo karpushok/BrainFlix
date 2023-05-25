@@ -33,7 +33,7 @@ function Upload() {
               type="text"
               id="title"
               name="name"
-              class="upload__name-input"
+              className="upload__name-input"
               placeholder="Add a title of your video"
             />
           </div>
@@ -47,7 +47,7 @@ function Upload() {
               id="description"
               type="text"
               name="text"
-              class="upload__description-input"
+              className="upload__description-input"
               placeholder="Add a description to your video"
             ></textarea>
           </div>

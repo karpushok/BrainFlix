@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useParams } from "react-router-dom";
 import axios from 'axios';
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
@@ -89,6 +89,12 @@ const dataNew = [
  * 
  * router - save key and pass ??
  * 
+ * 
+ * sidevideoItem.scss remove unnecessary containers? 
+ * 
+ * 
+ * default videos
+ * 
  **/
 
 const API_videos = 'https://project-2-api.herokuapp.com/videos'
@@ -108,6 +114,11 @@ function App() {
     
   const [videoData, setVideoData] = useState([]);
   const [videoMain, setVideoMain] = useState([])
+  const [currentVideo, setCurrentVideo] = useState({})
+
+  const params = useParams()
+
+  console.log(`App.jsx - line: 118 ->> params`, params)
 
   useEffect(() => {
   
@@ -116,18 +127,43 @@ function App() {
       const responseSideVideos = await axios.get(API_videos, {params: {api_key: '4a2fe7e7-839c-4200-97f2-e8184d411ec7'}})
       
       const idMain = responseSideVideos.data[0].id
+
+      console.log(`App.jsx - line: 124 ->> idMain`, idMain)
       const responseMainVideo = await axios.get(API_videos + `/${idMain}`, { params: { api_key: '4a2fe7e7-839c-4200-97f2-e8184d411ec7' } })
 
+      setCurrentVideo(responseSideVideos.data[0])
       setVideoData(responseSideVideos.data)
       setVideoMain(responseMainVideo.data)
 
-    })()
+    })() // IIFE
 
   }, []) // [] deps array
 
-  const filteredVideos = videoData.filter((video) => video.id !== videoMain.id);
 
+  useEffect(() => {
+    
+    if(currentVideo.id && (currentVideo.id !== videoMain.id)) {
+      
+      (async () => {
+        const idMain = currentVideo.id
+        const responseMainVideo = await axios.get(API_videos + `/${idMain}`, { params: { api_key: '4a2fe7e7-839c-4200-97f2-e8184d411ec7' } })
+
+        setVideoMain(responseMainVideo.data)
+      })()
+
+    } else {
+      return
+    }
+      
+  }, [currentVideo.id]) // mount // id
+  
   if(videoData.length === 0 || videoMain.length === 0) return null
+
+  console.log(`App.jsx - line: 154 ->> currentVideo`, currentVideo.id)
+  
+  const filteredVideos = videoData.filter((video) => video.id !== currentVideo.id);
+
+  console.log(`App.jsx - line: 156 ->> filteredVideos`, filteredVideos)
 
   return (
     <BrowserRouter>
@@ -145,7 +181,23 @@ function App() {
                   </div>
                   <Sidevideos
                     videoData={filteredVideos}
-                    setCurrentVideo={setVideoData}
+                    setCurrentVideo={setCurrentVideo}
+                  />
+                </main>
+              </>
+            }
+          />
+          <Route path="/video/:videoId" element={
+              <>
+                <Hero currentVideo={videoMain} />
+                <main className="main-content">
+                  <div className="left">
+                    <Video currentVideo={videoMain} />
+                    <Comments currentVideo={videoMain} />
+                  </div>
+                  <Sidevideos
+                    videoData={filteredVideos}
+                    setCurrentVideo={setCurrentVideo}
                   />
                 </main>
               </>
