@@ -1,20 +1,27 @@
 import "./App.css";
-import React, { useEffect } from "react";
-import { BrowserRouter } from "react-router-dom";
+import { useEffect } from "react";
+import {Outlet, useLoaderData} from "react-router-dom";
 import Header from "./components/Header/Header";
 
-
-const API_videos = 'https://project-2-api.herokuapp.com/videos'
-
 function App() {
-  
+  const apiKey = useLoaderData();
+
+  console.log(`App.jsx - line: 9 ->> apiKey`, apiKey)
+
+  useEffect(() => {
+    sessionStorage.setItem('apiKey', JSON.stringify(apiKey))
+  // no nneed for api_key as deps because it is a constant and doesn't change during session
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  const hasKey = Boolean(sessionStorage.getItem("apiKey"))
+
   return (
-    <BrowserRouter>
       <div className="container">
         <Header />
-        <MainLayout/>
+      {hasKey && <Outlet />}
+      {!hasKey && <>Please register!</>}
       </div>
-    </BrowserRouter>
   );
 }
 

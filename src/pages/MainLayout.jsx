@@ -1,6 +1,6 @@
 import axios from "axios";
 import {useEffect, useState} from "react";
-import {useParams, useRoutes} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import Comments from "../components/Comments/Comments";
 import Hero from "../components/Hero/Hero";
 import Sidevideos from "../components/Sidevideos/Sidevideos";
@@ -55,7 +55,8 @@ function MainLayout () {
         setVideoMain(responseMainVideo.data);
       })()
     }
-
+  
+  // no nneed for api_key as deps because it is a constant and doesn't change during session
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [videoId]); // mount // id
 
