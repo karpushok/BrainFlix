@@ -3,6 +3,7 @@ import "./Upload.css";
 import Preview from "../../assets/images/Upload-video-preview.jpg";
 
 function Upload() {
+  
   return (
     <section className="upload">
       <div className="upload__header">
@@ -24,7 +25,7 @@ function Upload() {
 
         <form className="upload__form">
           <div className="upload__subheader">
-            <label className="upload__subheader-text" for="title">
+            <label className="upload__subheader-text" htmlFor="title">
               TITLE YOUR VIDEO
             </label>
           </div>
@@ -38,7 +39,7 @@ function Upload() {
             />
           </div>
           <div className="upload__subheader">
-            <label className="upload__subheader-text" for="description">
+            <label className="upload__subheader-text" htmlFor="description">
               ADD A VIDEO DESCRIPTION
             </label>
           </div>

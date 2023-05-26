@@ -1,5 +1,5 @@
 import "./Hero.css";
-import React, { useState } from "react";
+import React from "react";
 
 function Hero ({ currentVideo }) {
 
@@ -14,7 +14,7 @@ function Hero ({ currentVideo }) {
           className="hero__image-object"
           poster={currentVideo.image}
         >
-        <source src={currentVideo.video} type="video/mp4" />
+        <source src={`${currentVideo.video}?api_key=test`} type="video/mp4" />
         </video>
       </div>
     </div>

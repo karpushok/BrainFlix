@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "./CommentItem.css";
-import { getDate, transformDateAgo } from "../../utils/utils";
+import { transformDateAgo } from "../../utils/utils";
 
 function CommentItem({ comment: commentItem }) {
   // Destructure properties from the commentItem object
