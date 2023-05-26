@@ -1,5 +1,4 @@
-import React from "react";
-import "./Upload.css";
+import "./Upload.scss";
 import Preview from "../../assets/images/Upload-video-preview.jpg";
 
 function Upload() {
@@ -18,7 +17,7 @@ function Upload() {
             <img
               className="upload__preview-image"
               src={Preview}
-              alt="preview-image"
+              alt="preview"
             />
           </div>
         </div>
@@ -53,6 +52,7 @@ function Upload() {
             ></textarea>
           </div>
         </form>
+
       </div>
       <div className="upload__button">
         <button className={"upload__button-input"} type="submit">
@@ -66,3 +66,23 @@ function Upload() {
   );
 }
 export default Upload;
+
+
+//TODO 
+/**
+  *
+  * add handler for form submit
+  * prevent default event
+  * 
+  * check not empty fields
+  * 
+  * show error when empty and don't allow submit
+  * 
+  * submit after no error and not empty
+  * 
+  * show successful send popup
+  * 
+  * and navigate to main page to route '/'
+  * 
+  **/
+

@@ -1,5 +1,4 @@
-import React from "react";
-import "./CommentItem.css";
+import "./CommentItem.scss";
 import { transformDateAgo } from "../../utils/utils";
 
 function CommentItem({ comment: commentItem }) {

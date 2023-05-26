@@ -1,6 +1,6 @@
 import CommentItem from "../CommentItem/CommentItem";
 import React, { useState } from "react";
-import "./Comments.css";
+import "./Comments.scss";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
 
 function Comments({ currentVideo }) {
@@ -18,6 +18,11 @@ function Comments({ currentVideo }) {
     setHasChanged(true);
   };
 
+  //TODO
+  /**
+   * axios
+   **/
+
   return (
     <section className="comments">
       <div className="comments__counter">
@@ -29,9 +34,12 @@ function Comments({ currentVideo }) {
           <img src={avatar} alt="logo" className="comments__input-avatar" />
         </div>
         <div className="comments__input-container">
+          {/* <label htmlFor=""></label> */}
           <textarea
             className={
-              hasChanged ? "comments__input-input--changed" : "comments__input-input"
+              hasChanged
+                ? "comments__input-input--changed"
+                : "comments__input-input"
             }
             id="comment"
             name="comment"
