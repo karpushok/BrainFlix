@@ -38,8 +38,6 @@ function Upload() {
     }
   }
 
-  // const hasErrorForm = hasTouchedForm && (!inputName || !inputDescription )
-
   return (
     <section className="upload">
       <div className="upload__header">
@@ -105,43 +103,3 @@ function Upload() {
   );
 }
 export default Upload;
-
-<<<<<<< HEAD
-//TODO
-/**
- *
- * add handler for form submit
- * prevent default event
- *
- * check not empty fields
- *
- * show error when empty and don't allow submit
- *
- * submit after no error and not empty
- *
- * show successful send popup
- *
- * and navigate to main page to route '/'
- *
- **/
-=======
-
-//TODO 
-/**
-  *
-  * add handler for form submit
-  * prevent default event
-  * 
-  * check not empty fields
-  * 
-  * show error when empty and don't allow submit
-  * 
-  * submit after no error and not empty
-  * 
-  * show successful send popup
-  * 
-  * and navigate to main page to route '/'
-  * 
-  **/
-
->>>>>>> ac40b2007c6c1de5da38ace55c789bb64b529b92
