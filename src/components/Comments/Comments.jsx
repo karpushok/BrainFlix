@@ -2,11 +2,16 @@ import CommentItem from "../CommentItem/CommentItem";
 import React, { useState } from "react";
 import "./Comments.scss";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
+import axios from "axios";
+import { API_videos } from "../../pages/MainLayout";
 
 function Comments({ currentVideo }) {
-  const comments = currentVideo.comments;
+  
+  const [comments, setComments] = useState(currentVideo.comments)
   const [inputText, setInputText] = useState("");
   const [hasChanged, setHasChanged] = useState(false);
+
+  const { api_key } = JSON.parse(sessionStorage.getItem("apiKey"));
 
   const handleInputTextChange = (e) => {
     const textValue = e.target.value;
@@ -18,10 +23,30 @@ function Comments({ currentVideo }) {
     setHasChanged(true);
   };
 
-  //TODO
-  /**
-   * axios
-   **/
+  const handleCommentSubmit = async (event) => {
+    event.preventDefault()
+
+    const isValidFrom = hasChanged && inputText
+
+    if (isValidFrom) {
+
+      const postBody = {
+        "name": "Guest",
+        "comment": inputText
+      }
+      
+      const response = await axios.post(API_videos + `/${currentVideo.id}/comments`, postBody, {
+        params: {
+          api_key
+        }
+      } )
+
+      setComments((prevComments) => [response.data, ...prevComments])
+      setInputText("")
+      setHasChanged(false)
+    }
+  }
+
 
   return (
     <section className="comments">
@@ -33,7 +58,7 @@ function Comments({ currentVideo }) {
         <div className="comments__input-profile">
           <img src={avatar} alt="logo" className="comments__input-avatar" />
         </div>
-        <div className="comments__input-container">
+        <form className="comments__input-container" onSubmit={handleCommentSubmit}>
           {/* <label htmlFor=""></label> */}
           <textarea
             className={
@@ -54,7 +79,7 @@ function Comments({ currentVideo }) {
           >
             COMMENT
           </button>
-        </div>
+        </form>
       </div>
       <div className="comment-list">
         {comments.map((comment) => {

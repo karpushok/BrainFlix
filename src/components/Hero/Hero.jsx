@@ -7,7 +7,7 @@ function Hero({ currentVideo }) {
       <div className="hero__image">
         <video
           controls //add video controls
-          autoPlay
+          // autoPlay
           loop
           id=""
           className="hero__image-object"

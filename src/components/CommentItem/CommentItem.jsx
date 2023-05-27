@@ -1,5 +1,6 @@
 import "./CommentItem.scss";
 import { transformDateAgo } from "../../utils/utils";
+import deleteImage from "../../assets/icons/delete.png";
 
 function CommentItem({ comment: commentItem }) {
   // Destructure properties from the commentItem object
@@ -20,6 +21,7 @@ function CommentItem({ comment: commentItem }) {
         <div className="comment-item__paragraph">
           <p>{comment}</p>
         </div>
+        <button className="comment-item__button"><img src={deleteImage} alt="delete" className="comment-item__delete"/></button>
       </div>
     </div>
   );

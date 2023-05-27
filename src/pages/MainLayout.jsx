@@ -6,7 +6,7 @@ import Hero from "../components/Hero/Hero";
 import Sidevideos from "../components/Sidevideos/Sidevideos";
 import Video from "../components/Video/Video";
 
-const API_videos = "https://project-2-api.herokuapp.com/videos";
+export const API_videos = "https://project-2-api.herokuapp.com/videos";
 
 function MainLayout() {
   const { api_key } = JSON.parse(sessionStorage.getItem("apiKey"));
