@@ -99,12 +99,14 @@ function Upload() {
             <button className="upload__cancel" onClick={handleCancelClick} type="button">CANCEL</button>
           </div>
         </form>
+
       </div>
     </section>
   );
 }
 export default Upload;
 
+<<<<<<< HEAD
 //TODO
 /**
  *
@@ -122,3 +124,24 @@ export default Upload;
  * and navigate to main page to route '/'
  *
  **/
+=======
+
+//TODO 
+/**
+  *
+  * add handler for form submit
+  * prevent default event
+  * 
+  * check not empty fields
+  * 
+  * show error when empty and don't allow submit
+  * 
+  * submit after no error and not empty
+  * 
+  * show successful send popup
+  * 
+  * and navigate to main page to route '/'
+  * 
+  **/
+
+>>>>>>> ac40b2007c6c1de5da38ace55c789bb64b529b92
