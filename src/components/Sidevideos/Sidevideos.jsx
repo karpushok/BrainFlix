@@ -1,5 +1,5 @@
 import SidevideosItem from "../SidevideosItem/SidevideoItem";
-import "./Sidevideos.css";
+import "./Sidevideos.scss";
 
 function Sidevideos({ videoData }) {
 

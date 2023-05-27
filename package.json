@@ -41,7 +41,6 @@
   },
   "devDependencies": {
     "gh-pages": "^5.0.0",
-    "json-loader": "^0.5.7",
-    "sass": "^1.62.1"
+    "json-loader": "^0.5.7"
   }
 }

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "./SidevideoItem.css";
+import "./SidevideoItem.scss";
 
 function SidevideosItem({ data }) {
   const navigate = useNavigate();

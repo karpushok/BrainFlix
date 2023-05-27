@@ -1,9 +1,49 @@
-import React from "react";
-import "./Upload.css";
+import "./Upload.scss";
 import Preview from "../../assets/images/Upload-video-preview.jpg";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Upload() {
+  const [inputName, setInputName] = useState("");
+  const [inputDescription, setInputDescription] = useState("");
+  const [hasTouchedForm, setHasTouchedForm] = useState([false, false]); // [input, description]
+
+  const navigate = useNavigate()
+
+  const handleInputName = (event) => {
+    setInputName(event.target.value)
+    setHasTouchedForm((prev) => [true, prev[1]])
+  }
   
+  const handleInputDescription = (event) => {
+    setInputDescription(event.target.value)
+    setHasTouchedForm((prev) => [prev[0], true])
+  }
+
+
+  const handleCancelClick = () => {
+    console.log(`Upload.jsx - line: 25 ->> `, )
+    setInputName('')
+    setInputDescription('')
+    setHasTouchedForm([false, false])
+  }
+
+  const handleFormSubmit = (event) => {
+
+    console.log(`Upload.jsx - line: 33 ->> `, )
+    event.preventDefault()
+
+    const isValidForm = !hasTouchedForm.some(el => el === false) && (inputName && inputDescription)
+    
+    if (isValidForm) {
+      navigate('/')
+    } else {
+      setHasTouchedForm([inputName.length === 0, inputDescription.length === 0])
+    }
+  }
+
+  // const hasErrorForm = hasTouchedForm && (!inputName || !inputDescription )
+
   return (
     <section className="upload">
       <div className="upload__header">
@@ -18,12 +58,12 @@ function Upload() {
             <img
               className="upload__preview-image"
               src={Preview}
-              alt="preview-image"
+              alt="preview"
             />
           </div>
         </div>
 
-        <form className="upload__form">
+        <form className="upload__form" onSubmit={handleFormSubmit}>
           <div className="upload__subheader">
             <label className="upload__subheader-text" htmlFor="title">
               TITLE YOUR VIDEO
@@ -34,8 +74,10 @@ function Upload() {
               type="text"
               id="title"
               name="name"
-              className="upload__name-input"
+              className={hasTouchedForm[0] && !inputName ? "upload__name-input upload__name-input--error" : "upload__name-input"}
               placeholder="Add a title of your video"
+              value={inputName}
+              onChange={handleInputName}
             />
           </div>
           <div className="upload__subheader">
@@ -48,21 +90,39 @@ function Upload() {
               id="description"
               type="text"
               name="text"
-              className="upload__description-input"
+              className={hasTouchedForm[1] && !inputDescription ? "upload__description-input upload__description-input--error" : "upload__description-input"}
               placeholder="Add a description to your video"
-            ></textarea>
+              value={inputDescription}
+              onChange={handleInputDescription}
+            />
+          </div>
+          <div className="upload__button">
+            <button className={"upload__button-input"} type="submit">
+              PUBLISH
+            </button>
+            <button className="upload__cancel" onClick={handleCancelClick} type="button">CANCEL</button>
           </div>
         </form>
-      </div>
-      <div className="upload__button">
-        <button className={"upload__button-input"} type="submit">
-          PUBLISH
-        </button>
-        <a href="#" className="upload__cancel">
-          CANCEL
-        </a>
       </div>
     </section>
   );
 }
 export default Upload;
+
+//TODO
+/**
+ *
+ * add handler for form submit
+ * prevent default event
+ *
+ * check not empty fields
+ *
+ * show error when empty and don't allow submit
+ *
+ * submit after no error and not empty
+ *
+ * show successful send popup
+ *
+ * and navigate to main page to route '/'
+ *
+ **/

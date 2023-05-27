@@ -1,4 +1,4 @@
-import "./Video.css";
+import "./Video.scss";
 import React from "react";
 
 import likesImage from "../../assets/icons/likes.svg";

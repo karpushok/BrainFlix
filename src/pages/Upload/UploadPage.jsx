@@ -1,6 +1,6 @@
 import Upload from "../../components/Upload/Upload";
 import React from "react";
-import "./UploadPage.css";
+import "./UploadPage.scss";
 
 function UploadPage() {
   return (

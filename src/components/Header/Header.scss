@@ -64,6 +64,9 @@
     background-size: 1.5rem 1.5rem;
     background-repeat: no-repeat;
     background-position: 0.5rem;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 
