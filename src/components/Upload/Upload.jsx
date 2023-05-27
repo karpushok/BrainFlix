@@ -20,20 +20,16 @@ function Upload() {
     setHasTouchedForm((prev) => [prev[0], true])
   }
 
-
   const handleCancelClick = () => {
-    console.log(`Upload.jsx - line: 25 ->> `, )
     setInputName('')
     setInputDescription('')
     setHasTouchedForm([false, false])
   }
 
   const handleFormSubmit = (event) => {
-
-    console.log(`Upload.jsx - line: 33 ->> `, )
     event.preventDefault()
 
-    const isValidForm = !hasTouchedForm.some(el => el === false) && (inputName && inputDescription)
+    const isValidForm = !hasTouchedForm.every(el => el === true) && (inputName && inputDescription)
     
     if (isValidForm) {
       navigate('/')
