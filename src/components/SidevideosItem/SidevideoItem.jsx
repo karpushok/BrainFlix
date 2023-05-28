@@ -5,7 +5,7 @@ function SidevideosItem({ data }) {
   const navigate = useNavigate();
 
   const handleVideoCLick = () => {
-    navigate(`/video/${data.id}`);
+    navigate(`/BrainFlix/video/${data.id}`);
   };
 
   return (

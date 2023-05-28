@@ -9,14 +9,14 @@ function Header() {
   const navigate = useNavigate();
 
   const handleClickUpload = () => {
-    navigate("/upload");
+    navigate("/BrainFlix/upload");
   };
 
   return (
     <header className="header">
       <div className="wrapper">
         <div className="header__logo">
-          <Link to="/">
+          <Link to="/BrainFlix">
             <img src={logo} alt="logo" className="header__logo-image" />
           </Link>
         </div>

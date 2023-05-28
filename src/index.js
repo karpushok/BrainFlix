@@ -9,7 +9,7 @@ import reportWebVitals from "./reportWebVitals";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/BrainFlix",
     element: <App />,
     errorElement: <ErrorPage />,
     loader: async () => {
@@ -26,19 +26,19 @@ const router = createBrowserRouter([
     },
     children: [
       {
-        path: "/",
+        path: "/BrainFlix",
         element: <MainLayout />,
       },
       {
-        path: "/video/:videoId",
+        path: "/BrainFlix/video/:videoId",
         element: <MainLayout />,
       },
       {
-        path: "/upload",
+        path: "/BrainFlix/upload",
         element: <UploadPage />,
       },
       {
-        path: "/*/*",
+        path: "/BrainFlix/*/*",
         element: <>404 Not Found!</>,
       },
     ],
