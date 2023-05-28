@@ -13,7 +13,16 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage />,
     loader: async () => {
-      return await fetch(`https://project-2-api.herokuapp.com/register`);
+      const response = await fetch( `https://project-2-api.herokuapp.com/register` )
+
+      if ( response.status === 200 ) {
+        if (!Boolean(sessionStorage.getItem("apiKey"))) {
+              sessionStorage.setItem( "apiKey", JSON.stringify( await response.json() ) );
+            }
+        return true
+      }
+
+      return false
     },
     children: [
       {

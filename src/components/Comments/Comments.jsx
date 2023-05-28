@@ -1,9 +1,8 @@
-import CommentItem from "../CommentItem/CommentItem";
-import React, { useState, useEffect } from "react";
-import "./Comments.scss";
+import React, {useEffect, useState} from "react";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
-import axios from "axios";
-import { API_videos } from "../../pages/MainLayout";
+import {deleteData, postData} from "../../utils/utils";
+import CommentItem from "../CommentItem/CommentItem";
+import "./Comments.scss";
 
 function Comments({ currentVideo }) {
   const [comments, setComments] = useState(currentVideo.comments);
@@ -11,14 +10,11 @@ function Comments({ currentVideo }) {
   const [inputText, setInputText] = useState("");
   const [hasChanged, setHasChanged] = useState(false);
 
-  const { api_key } = JSON.parse(sessionStorage.getItem("apiKey"));
-
   useEffect(() => {
-    setComments( currentVideo.comments )
+    setComments(currentVideo.comments);
     // no need for extra deps
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentVideo.comments])
-  
+  }, [currentVideo.comments]);
 
   const handleInputTextChange = (e) => {
     const textValue = e.target.value;
@@ -30,30 +26,17 @@ function Comments({ currentVideo }) {
     setHasChanged(true);
   };
 
-  const handleCommentSubmit = async (event) => {
+  const handleCommentSubmit = (event) => {
     event.preventDefault();
 
     const isValidFrom = hasChanged && inputText;
 
     if (isValidFrom) {
-      const postBody = {
-        name: "Guest",
-        comment: inputText,
-      };
-
-      const response = await axios.post(
-        API_videos + `/${currentVideo.id}/comments`,
-        postBody,
-        {
-          params: {
-            api_key,
-          },
-        }
-      );
-
-      setComments((prevComments) => [response.data, ...prevComments]);
-      setInputText("");
-      setHasChanged(false);
+      postData(currentVideo.id, inputText).then((newComment) => {
+        setComments((prevComments) => [newComment, ...prevComments]);
+        setInputText("");
+        setHasChanged(false);
+      });
     }
   };
 
@@ -62,19 +45,14 @@ function Comments({ currentVideo }) {
 
     if (!isSure) return;
 
-    await axios.delete(
-      API_videos + `/${currentVideo.id}/comments/${commentId}`,
-      {
-        params: {
-          api_key,
-        },
-      }
-    );
+    deleteData(currentVideo.id, commentId).then((deletedComment) => {
+      setComments((prevComments) =>
+        prevComments.filter((comment) => comment.id !== commentId)
+      );
+    });
+  };
 
-    setComments((prevComments) => prevComments.filter(comment => comment.id !== commentId));
-  }
-
-  comments.sort((a, b) => b.timestamp - a.timestamp)
+  comments.sort((a, b) => b.timestamp - a.timestamp);
 
   return (
     <section className="comments">
@@ -114,7 +92,13 @@ function Comments({ currentVideo }) {
       </div>
       <div className="comment-list">
         {comments.map((comment) => {
-          return <CommentItem comment={comment} key={comment.id} onDelete={() => handleCommentDelete(comment.id)}/>;
+          return (
+            <CommentItem
+              comment={comment}
+              key={comment.id}
+              onDelete={() => handleCommentDelete(comment.id)}
+            />
+          );
         })}
       </div>
     </section>
