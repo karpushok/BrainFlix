@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/BrainFlix/static/css/main.67049fda.css",
-    "main.js": "/BrainFlix/static/js/main.f14294bb.js",
+    "main.js": "/BrainFlix/static/js/main.abbca0e9.js",
     "static/js/787.2065d49e.chunk.js": "/BrainFlix/static/js/787.2065d49e.chunk.js",
     "static/media/Upload-video-preview.jpg": "/BrainFlix/static/media/Upload-video-preview.313a407cf90c0668da07.jpg",
     "static/media/Mohan-muruge.jpg": "/BrainFlix/static/media/Mohan-muruge.7f8e1b851a284bcfa377.jpg",
@@ -18,11 +18,11 @@
     "static/media/likes.svg": "/BrainFlix/static/media/likes.246cd8f4356b27c4d0cb18d1be8605d2.svg",
     "static/media/add_comment.svg": "/BrainFlix/static/media/add_comment.26bc7a200a77fd1eb3c8.svg",
     "main.67049fda.css.map": "/BrainFlix/static/css/main.67049fda.css.map",
-    "main.f14294bb.js.map": "/BrainFlix/static/js/main.f14294bb.js.map",
+    "main.abbca0e9.js.map": "/BrainFlix/static/js/main.abbca0e9.js.map",
     "787.2065d49e.chunk.js.map": "/BrainFlix/static/js/787.2065d49e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.67049fda.css",
-    "static/js/main.f14294bb.js"
+    "static/js/main.abbca0e9.js"
   ]
 }
