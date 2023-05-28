@@ -1,17 +1,24 @@
 import CommentItem from "../CommentItem/CommentItem";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Comments.scss";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
 import axios from "axios";
 import { API_videos } from "../../pages/MainLayout";
 
 function Comments({ currentVideo }) {
-  
-  const [comments, setComments] = useState(currentVideo.comments)
+  const [comments, setComments] = useState(currentVideo.comments);
+
   const [inputText, setInputText] = useState("");
   const [hasChanged, setHasChanged] = useState(false);
 
   const { api_key } = JSON.parse(sessionStorage.getItem("apiKey"));
+
+  useEffect(() => {
+    setComments( currentVideo.comments )
+    // no need for extra deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentVideo.comments])
+  
 
   const handleInputTextChange = (e) => {
     const textValue = e.target.value;
@@ -24,29 +31,50 @@ function Comments({ currentVideo }) {
   };
 
   const handleCommentSubmit = async (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
-    const isValidFrom = hasChanged && inputText
+    const isValidFrom = hasChanged && inputText;
 
     if (isValidFrom) {
-
       const postBody = {
-        "name": "Guest",
-        "comment": inputText
-      }
-      
-      const response = await axios.post(API_videos + `/${currentVideo.id}/comments`, postBody, {
-        params: {
-          api_key
-        }
-      } )
+        name: "Guest",
+        comment: inputText,
+      };
 
-      setComments((prevComments) => [response.data, ...prevComments])
-      setInputText("")
-      setHasChanged(false)
+      const response = await axios.post(
+        API_videos + `/${currentVideo.id}/comments`,
+        postBody,
+        {
+          params: {
+            api_key,
+          },
+        }
+      );
+
+      setComments((prevComments) => [response.data, ...prevComments]);
+      setInputText("");
+      setHasChanged(false);
     }
+  };
+
+  const handleCommentDelete = async (commentId) => {
+    const isSure = window.confirm("Are you sure you want to delete?");
+
+    if (!isSure) return;
+
+    await axios.delete(
+      API_videos + `/${currentVideo.id}/comments/${commentId}`,
+      {
+        params: {
+          api_key,
+        },
+      }
+    );
+
+    setComments((prevComments) => prevComments.filter(comment => comment.id !== commentId));
   }
 
+  comments.sort((a, b) => b.timestamp - a.timestamp)
 
   return (
     <section className="comments">
@@ -58,7 +86,10 @@ function Comments({ currentVideo }) {
         <div className="comments__input-profile">
           <img src={avatar} alt="logo" className="comments__input-avatar" />
         </div>
-        <form className="comments__input-container" onSubmit={handleCommentSubmit}>
+        <form
+          className="comments__input-container"
+          onSubmit={handleCommentSubmit}
+        >
           {/* <label htmlFor=""></label> */}
           <textarea
             className={
@@ -83,7 +114,7 @@ function Comments({ currentVideo }) {
       </div>
       <div className="comment-list">
         {comments.map((comment) => {
-          return <CommentItem comment={comment} key={comment.id} />;
+          return <CommentItem comment={comment} key={comment.id} onDelete={() => handleCommentDelete(comment.id)}/>;
         })}
       </div>
     </section>

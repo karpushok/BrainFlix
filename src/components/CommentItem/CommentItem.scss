@@ -29,14 +29,16 @@
     &__delete {
         width: 0.8rem;
         height: 0.8rem;
-        background-color: white;
+        
+        
         &:hover {
             cursor: pointer;
         }
     }
     &__button {
         margin-left: calc(100% - 1.5rem);
-        
+        border: none;
+        background-color: white;
     }
 }
 

@@ -68,6 +68,8 @@ function MainLayout() {
     (video) => video.id !== (videoId || videoData[0].id)
   );
 
+  console.log(`MainLayout.jsx - line: 71 ->> videoMain`, videoMain )
+
   return (
     <>
       <Hero currentVideo={videoMain} />
