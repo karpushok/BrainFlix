@@ -28,18 +28,16 @@ function Header() {
               className="header__search-input"
             />
           </div>
+          <button className="header__upload" onClick={handleClickUpload}>
+          UPLOAD
+          </button>
           <div className="header__profile">
             <img src={avatar} alt="Avatar" className="header__profile-image" />
           </div>
         </div>
-        <button className="header__upload" onClick={handleClickUpload}>
-          UPLOAD
-        </button>
       </div>
     </header>
   );
 }
 
 export default Header;
-
-// add correct link to logo image
