@@ -30,6 +30,7 @@ function Video({ currentVideo }) {
             <img
               src={viewsImage}
               className="video__data-views-image"
+              alt="views"
             />
             <h4>{views}</h4>
           </div>
@@ -37,6 +38,7 @@ function Video({ currentVideo }) {
             <img
               src={likesImage}
               className="video__data-likes-image"
+              alt="likes"
             />
             <h4>{likes}</h4>
           </div>
