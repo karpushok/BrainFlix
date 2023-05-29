@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import MainLayout from "./pages/MainLayout";
 import ErrorPage from "./pages/ErrorPage";
 import UploadPage from "./pages/Upload/UploadPage";
 import reportWebVitals from "./reportWebVitals";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
-    path: "/BrainFlix",
+    path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
     loader: async () => {
@@ -26,19 +26,19 @@ const router = createBrowserRouter([
     },
     children: [
       {
-        path: "/BrainFlix",
+        path: "/",
         element: <MainLayout />,
       },
       {
-        path: "/BrainFlix/video/:videoId",
+        path: "/video/:videoId",
         element: <MainLayout />,
       },
       {
-        path: "/BrainFlix/upload",
+        path: "/upload",
         element: <UploadPage />,
       },
       {
-        path: "/BrainFlix/*/*",
+        path: "/*/*",
         element: <>404 Not Found!</>,
       },
     ],

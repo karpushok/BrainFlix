@@ -29,10 +29,10 @@ function Upload() {
   const handleFormSubmit = (event) => {
     event.preventDefault()
 
-    const isValidForm = !hasTouchedForm.every(el => el === true) && (inputName && inputDescription)
+    const isValidForm = hasTouchedForm.every(el => el === true) && (inputName && inputDescription)
     
     if (isValidForm) {
-      navigate('/BrainFlix/')
+      navigate('/')
     } else {
       setHasTouchedForm([inputName.length === 0, inputDescription.length === 0])
     }

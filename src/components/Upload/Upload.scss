@@ -118,7 +118,7 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      margin: 2rem 1rem;
+      margin: 2rem 0;
       padding-top: 1rem;
 
       position: relative;
@@ -173,17 +173,16 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      margin: 2rem 1rem;
+      margin: 2rem 0;
       padding-top: 1rem;
-
       position: relative;
-      border-top: 1px solid $secondary-silver;
 
       &-input {
         width: 10rem;
         margin-right: 0;
         height: 2.5rem;
       }
+
     }
 
     &__cancel {
