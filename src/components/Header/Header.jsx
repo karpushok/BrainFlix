@@ -29,7 +29,7 @@ function Header() {
             />
           </div>
           <button className="header__upload" onClick={handleClickUpload}>
-          UPLOAD
+            UPLOAD
           </button>
           <div className="header__profile">
             <img src={avatar} alt="Avatar" className="header__profile-image" />

@@ -8,35 +8,41 @@ function Upload() {
   const [inputDescription, setInputDescription] = useState("");
   const [hasTouchedForm, setHasTouchedForm] = useState([false, false]); // [input, description]
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleInputName = (event) => {
-    setInputName(event.target.value)
-    setHasTouchedForm((prev) => [true, prev[1]])
-  }
-  
+    setInputName(event.target.value);
+    setHasTouchedForm((prev) => [true, prev[1]]);
+  };
+
   const handleInputDescription = (event) => {
-    setInputDescription(event.target.value)
-    setHasTouchedForm((prev) => [prev[0], true])
-  }
+    setInputDescription(event.target.value);
+    setHasTouchedForm((prev) => [prev[0], true]);
+  };
 
   const handleCancelClick = () => {
-    setInputName('')
-    setInputDescription('')
-    setHasTouchedForm([false, false])
-  }
+    setInputName("");
+    setInputDescription("");
+    setHasTouchedForm([false, false]);
+  };
 
   const handleFormSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
-    const isValidForm = hasTouchedForm.every(el => el === true) && (inputName && inputDescription)
-    
+    const isValidForm =
+      hasTouchedForm.every((el) => el === true) &&
+      inputName &&
+      inputDescription;
+
     if (isValidForm) {
-      navigate('/')
+      navigate("/");
     } else {
-      setHasTouchedForm([inputName.length === 0, inputDescription.length === 0])
+      setHasTouchedForm([
+        inputName.length === 0,
+        inputDescription.length === 0, //check this status
+      ]);
     }
-  }
+  };
 
   return (
     <section className="upload">
@@ -68,7 +74,11 @@ function Upload() {
               type="text"
               id="title"
               name="name"
-              className={hasTouchedForm[0] && !inputName ? "upload__name-input upload__name-input--error" : "upload__name-input"}
+              className={
+                hasTouchedForm[0] && !inputName
+                  ? "upload__name-input upload__name-input--error"
+                  : "upload__name-input"
+              }
               placeholder="Add a title of your video"
               value={inputName}
               onChange={handleInputName}
@@ -84,7 +94,11 @@ function Upload() {
               id="description"
               type="text"
               name="text"
-              className={hasTouchedForm[1] && !inputDescription ? "upload__description-input upload__description-input--error" : "upload__description-input"}
+              className={
+                hasTouchedForm[1] && !inputDescription
+                  ? "upload__description-input upload__description-input--error"
+                  : "upload__description-input"
+              }
               placeholder="Add a description to your video"
               value={inputDescription}
               onChange={handleInputDescription}
@@ -94,10 +108,15 @@ function Upload() {
             <button className={"upload__button-input"} type="submit">
               PUBLISH
             </button>
-            <button className="upload__cancel" onClick={handleCancelClick} type="button">CANCEL</button>
+            <button
+              className="upload__cancel"
+              onClick={handleCancelClick}
+              type="button"
+            >
+              CANCEL
+            </button>
           </div>
         </form>
-
       </div>
     </section>
   );
