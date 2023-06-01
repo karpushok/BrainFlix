@@ -35,7 +35,7 @@ function transformDateAgo(value, args) {
 
 const getData = ( pathExt = '' ) => {
   return new Promise( async ( resolve ) => {
-    const API_videos = "https://project-2-api.herokuapp.com/videos";
+    const API_videos = "http://localhost:3001/videos";
     const {api_key} = JSON.parse( sessionStorage.getItem( "apiKey" ) );
 
     try {
@@ -58,7 +58,7 @@ const getData = ( pathExt = '' ) => {
 
 const postData = ( currentVieoId, inputText ) => {
   return new Promise( async ( resolve, reject ) => {
-    const API_videos = "https://project-2-api.herokuapp.com/videos";
+    const API_videos = "http://localhost:3001/videos";
     const {api_key} = JSON.parse( sessionStorage.getItem( "apiKey" ) );
 
     try {
@@ -94,7 +94,7 @@ const postData = ( currentVieoId, inputText ) => {
 const deleteData = ( currentVieoId, commentId ) => {
   return new Promise( async ( resolve, reject ) => {
 
-    const API_videos = "https://project-2-api.herokuapp.com/videos";
+    const API_videos = "http://localhost:3001/videos";
     const {api_key} = JSON.parse( sessionStorage.getItem( "apiKey" ) );
 
     try {
