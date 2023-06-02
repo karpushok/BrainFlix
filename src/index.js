@@ -29,7 +29,7 @@ const router = createHashRouter([
       //   {mode: "no-cors"}
       // );
 
-      console.log(`index.js - line: 21 ->> response`, response.data)
+      // console.log(`index.js - line: 21 ->> response`, response.data)
 
       if (response.status === 201) {
         if (!Boolean(sessionStorage.getItem("apiKey"))) {
