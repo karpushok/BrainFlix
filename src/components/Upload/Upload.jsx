@@ -1,7 +1,7 @@
 import "./Upload.scss";
-import Preview from "../../assets/images/Upload-video-preview.jpg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {uploadData} from '../../utils/utils'
 
 function Upload() {
   const [inputName, setInputName] = useState("");
@@ -9,6 +9,8 @@ function Upload() {
   const [hasTouchedForm, setHasTouchedForm] = useState([false, false]); // [input, description]
 
   const navigate = useNavigate();
+
+  const imageToUpload = "https://i.imgur.com/4TSJsRK.jpeg";
 
   const handleInputName = (event) => {
     setInputName(event.target.value);
@@ -35,7 +37,15 @@ function Upload() {
       inputDescription;
 
     if (isValidForm) {
-      navigate("/");
+
+      uploadData({
+        "imgSrc": imageToUpload,
+        "title": inputName,
+        "description": inputDescription
+      }).then(() => {
+        navigate("/");
+      })
+
     } else {
       setHasTouchedForm([
         inputName.length === 0,
@@ -57,7 +67,7 @@ function Upload() {
           <div className="upload__preview">
             <img
               className="upload__preview-image"
-              src={Preview}
+              src={imageToUpload}
               alt="preview"
             />
           </div>

@@ -119,4 +119,42 @@ const deleteData = ( currentVieoId, commentId ) => {
   } )
 }
 
-export {getDate, transformDateAgo, getData, postData, deleteData};
+const uploadData = ( formData ) => {
+  return new Promise( async ( resolve, reject ) => {
+    const API_upload = "http://localhost:3001/upload";
+    const {api_key} = JSON.parse( sessionStorage.getItem( "apiKey" ) );
+
+    try {
+
+      const obj = {
+        "imgSrc": "https://i.imgur.com/4TSJsRK.jpeg",
+        "title": "test title",
+        "description": "test description"
+      }
+
+      const postBody = formData
+
+      const response = await axios.post(
+        API_upload,
+        postBody,
+        {
+          params: {
+            api_key,
+          },
+        }
+      );
+
+      const {status, data} = response
+
+      if ( status !== 200 ) throw Error( response.statusText )
+
+      resolve( data )
+
+    } catch ( error ) {
+      console.log( 'Error posting comment ', error )
+    }
+
+  } )
+}
+
+export {getDate, transformDateAgo, getData, postData, deleteData, uploadData};
