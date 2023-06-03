@@ -25,6 +25,11 @@ function Upload() {
   const handleCancelClick = () => {
     setInputName("");
     setInputDescription("");
+    //TODO 
+    /**
+      * fix logic
+      * (prev) => [inputName.length > 0 && prev[0] !== false, inputName.length > 0 && prev[1] !== false]
+      **/
     setHasTouchedForm([false, false]);
   };
 
