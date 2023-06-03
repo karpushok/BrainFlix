@@ -11,7 +11,7 @@ function Hero({ currentVideo }) {
           loop
           id=""
           className="hero__image-object"
-          poster={currentVideo.image}
+          poster={'http://localhost:3001'+currentVideo.image}
         >
           <source src={`${currentVideo.video}?api_key=test`} type="video/mp4" />
         </video>
