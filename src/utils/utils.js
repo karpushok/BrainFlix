@@ -91,6 +91,36 @@ const postData = ( currentVieoId, inputText ) => {
   } )
 }
 
+const putData = (currentVieoId) => {
+  return new Promise( async ( resolve, reject ) => {
+    const API_videos = "http://localhost:3001/videos";
+    const {api_key} = JSON.parse( sessionStorage.getItem( "apiKey" ) );
+
+    try {
+
+      const response = await axios.post(
+        API_videos + `/${ currentVieoId }/like`,
+        {},
+        {
+          params: {
+            api_key,
+          },
+        }
+      );
+
+      const {status, data} = response
+
+      if ( status !== 200 ) throw Error( response.statusText )
+
+      resolve( data )
+
+    } catch ( error ) {
+      console.log( 'Error posting comment ', error )
+    }
+
+  } )
+}
+
 const deleteData = ( currentVieoId, commentId ) => {
   return new Promise( async ( resolve, reject ) => {
 
@@ -126,12 +156,6 @@ const uploadData = ( formData ) => {
 
     try {
 
-      const obj = {
-        "imgSrc": "https://i.imgur.com/4TSJsRK.jpeg",
-        "title": "test title",
-        "description": "test description"
-      }
-
       const postBody = formData
 
       const response = await axios.post(
@@ -157,4 +181,4 @@ const uploadData = ( formData ) => {
   } )
 }
 
-export {getDate, transformDateAgo, getData, postData, deleteData, uploadData};
+export {getDate, transformDateAgo, getData, postData, deleteData, uploadData, putData};

@@ -1,12 +1,28 @@
 import "./Video.scss";
-import React from "react";
+import React, {useState, useEffect} from "react";
 
 import likesImage from "../../assets/icons/likes.svg";
 import viewsImage from "../../assets/icons/views.svg";
-import { transformDateAgo } from "../../utils/utils";
+import { transformDateAgo, putData } from "../../utils/utils";
 
 function Video({ currentVideo }) {
-  const { title, channel, timestamp, views, likes, description } = currentVideo;
+  
+  const [like, setLike] = useState(false)
+  const [currentVideoState, setCurrentVideoState] = useState(currentVideo)
+  
+  const { title, channel, timestamp, views, likes, description, id } = currentVideoState;
+
+  const handleClickLike = () => {
+    putData(id).then((data) => {
+      setLike(true)
+      setCurrentVideoState(data)
+    })
+  }
+
+  useEffect(() => {
+    setLike(false)
+    setCurrentVideoState(currentVideo)
+  },[currentVideo.title])
 
   return (
     <section className="video">
@@ -37,8 +53,9 @@ function Video({ currentVideo }) {
           <div className="video__data-likes">
             <img
               src={likesImage}
-              className="video__data-likes-image"
+              className={like ? "video__data-likes-image video__data-likes-image--liked" : "video__data-likes-image"}
               alt="likes"
+              onClick={handleClickLike} 
             />
             <h4>{likes}</h4>
           </div>
