@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {uploadData} from '../../utils/utils'
 
+import imageUpload from '../../assets/images/Upload-video-preview.jpg'
+
 function Upload() {
   const [inputName, setInputName] = useState("");
   const [inputDescription, setInputDescription] = useState("");
@@ -65,7 +67,7 @@ function Upload() {
           <div className="upload__preview">
             <img
               className="upload__preview-image"
-              src={imageToUpload}
+              src={imageUpload}
               alt="preview"
             />
           </div>
