@@ -1,68 +1,57 @@
 import "./Upload.scss";
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { uploadData } from '../../utils/utils'
+import { uploadData } from "../../utils/utils";
+
+import PlaceHolderImage from "../../assets/images/Upload-video-preview.jpg";
 
 function Upload() {
   const [inputName, setInputName] = useState("");
   const [inputDescription, setInputDescription] = useState("");
-  const [inputPosterImage, setInputPosterImage] = useState("")
-  const [inputPoster, setInputPoster] = useState("")
-  const [hasTouchedForm, setHasTouchedForm] = useState([false, false]); // [input, description]
+  const [inputPosterImage, setInputPosterImage] = useState("");
+  const [inputPoster, setInputPoster] = useState("");
+  const [hasTouchedForm, setHasTouchedForm] = useState([false, false, false]); // [input, description, poster]
 
   const navigate = useNavigate();
 
-  const formRef = useRef(null)
+  const formRef = useRef(null);
 
   const handleInputName = (event) => {
-    setInputName(event.target.value);
-    setHasTouchedForm((prev) => [true, prev[1]]);
+    setInputName(event.target.value.trim());
+    setHasTouchedForm((prev) => [true, prev[1], prev[2]]);
   };
 
   const handleInputDescription = (event) => {
-    setInputDescription(event.target.value);
-    setHasTouchedForm((prev) => [prev[0], true]);
+    setInputDescription(event.target.value.trim());
+    setHasTouchedForm((prev) => [prev[0], true, prev[2]]);
   };
 
   const handleCancelClick = () => {
     setInputName("");
     setInputDescription("");
-
-    setHasTouchedForm([false, false]);
+    setInputPoster("");
+    setInputPosterImage("");
+    setHasTouchedForm([false, false, false]);
   };
 
   const handleUploadPoster = (e) => {
-    const form = new FormData( formRef.current );
+    const form = new FormData(formRef.current);
     const fileReader = new FileReader();
 
-    console.log(`Upload.jsx - line: 38 ->> formRef.current`, formRef.current)
-    console.log(`Upload.jsx - line: 38 ->> form.get('file')`, form.get('file'))
-    console.log(`Upload.jsx - line: 38 ->> form.get('file')`, form.get('description'))
-    
-    // fileReader.readAsDataURL(form.get('file'));
-    
-    // fileReader.addEventListener('load', () => {
-    //   const base64Blob = fileReader.result;
+    fileReader.readAsDataURL(form.get("file"));
 
-    //   console.log(`Upload.jsx - line: 43 ->> base64Blob`, base64Blob)
-      
-    //   setInputPoster( e.target.value )
-    //   setInputPosterImage( base64Blob )
-    // });
+    fileReader.addEventListener("load", () => {
+      const base64Blob = fileReader.result;
 
-  }
+      setInputPoster(e.target.value.trim());
+      setInputPosterImage(base64Blob);
+      setHasTouchedForm((prev) => [prev[0], prev[1], true]);
+    });
+  };
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-    // console.log(`Upload.jsx - line: 40 ->> inputPosterPath`, inputPoster)
-
-    // const formData = new FormData();
-    // formData.append('file', inputPoster);
-
-    // console.log(`Upload.jsx - line: 43 ->> formData`, formData)
-
-    
     const isValidForm =
       hasTouchedForm.every((el) => el === true) &&
       inputName &&
@@ -70,20 +59,17 @@ function Upload() {
       inputPoster;
 
     if (isValidForm) {
+      const formData = new FormData(formRef.current);
 
-      // Sgring.trim()!
-
-      // uploadData({
-      //   "imgSrc": imageToUpload,
-      //   "file": inputPosterPath,
-      //   "title": inputName,
-      //   "description": inputDescription
-      // }).then(() => {
-      //   navigate("/");
-      // })
-
+      uploadData(formData).then(() => {
+        navigate("/");
+      });
     } else {
-      setHasTouchedForm((prev) => [inputName.length === 0 || prev[0] !== false, inputDescription.length === 0 || prev[1] !== false ]);
+      setHasTouchedForm((prev) => [
+        inputName.length === 0 || prev[0] !== false,
+        inputDescription.length === 0 || prev[1] !== false,
+        inputPoster.length === 0 || prev[2] !== false,
+      ]);
     }
   };
 
@@ -99,19 +85,34 @@ function Upload() {
           </div>
           <div className="upload__preview">
             <img
-              className="upload__preview-image"
-              src={inputPosterImage}
+              className={
+                hasTouchedForm[2] && !inputPoster
+                  ? "upload__preview-image upload__preview-image--error"
+                  : "upload__preview-image"
+              }
+              src={inputPosterImage || PlaceHolderImage}
               alt="preview"
             />
           </div>
         </div>
 
-        <form className="upload__form" onSubmit={handleFormSubmit} ref={formRef}>
+        <form
+          className="upload__form"
+          onSubmit={handleFormSubmit}
+          ref={formRef}
+        >
           <div className="upload__input">
             <label htmlFor="file">UPLOAD YOUR POSTER</label>
-            <input type="file" id="file" onChange={handleUploadPoster} className="upload__button-poster" accept={"image/*"} />
+            <input
+              type="file"
+              name="file"
+              id="file"
+              onChange={handleUploadPoster}
+              className="upload__button-poster"
+              accept={"image/*"}
+            />
           </div>
-          
+
           <div className="upload__subheader">
             <label className="upload__subheader-text" htmlFor="title">
               TITLE YOUR VIDEO
@@ -121,7 +122,7 @@ function Upload() {
             <input
               type="text"
               id="title"
-              name="name"
+              name="title"
               className={
                 hasTouchedForm[0] && !inputName
                   ? "upload__name-input upload__name-input--error"

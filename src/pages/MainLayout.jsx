@@ -39,9 +39,6 @@ function MainLayout() {
 
   const filteredVideos = videoData.filter((video) => video.id !== (videoId || videoData[0].id));
 
-  // console.log(`MainLayout.jsx - line: 42 ->> videoMain`, videoMain)
-  // console.log(`MainLayout.jsx - line: 42 ->> filteredVideos`, filteredVideos)
-
   return (
     <>
       <Hero currentVideo={videoMain} />
