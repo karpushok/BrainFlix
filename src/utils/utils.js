@@ -115,7 +115,7 @@ const putData = (currentVieoId) => {
       resolve( data )
 
     } catch ( error ) {
-      console.log( 'Error posting comment ', error )
+      console.log( 'Error posting like ', error )
     }
 
   } )
@@ -156,17 +156,16 @@ const uploadData = ( formData ) => {
 
     try {
 
-      const postBody = formData
+      const postBody = formData;
 
-      const response = await axios.post(
-        API_upload,
-        postBody,
-        {
-          params: {
-            api_key,
-          },
-        }
-      );
+      const response = await axios.post(API_upload, postBody, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+        params: {
+          api_key,
+        },
+      });
 
       const {status, data} = response
 
@@ -175,7 +174,7 @@ const uploadData = ( formData ) => {
       resolve( data )
 
     } catch ( error ) {
-      console.log( 'Error posting comment ', error )
+      console.log( 'Error uploading ', error )
     }
 
   } )

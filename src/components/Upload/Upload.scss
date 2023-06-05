@@ -41,6 +41,27 @@
     }
   }
 
+  input[type="file"]::file-selector-button {
+    width: calc(100%);
+    margin: 1rem 0;
+    height: 2.5rem;
+    color: white;
+    background-color: $primary-blue;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    text-transform: capitalize;
+  }
+
+  input[type="file"]::file-selector-button:hover {
+    background-color: $primary-blue;
+  }
+
+  &__preview-image--error {
+    border-color: $error-red;
+    color: $error-red;
+  }
+
   &__cancel {
     text-decoration: none;
     border: none;
@@ -66,6 +87,7 @@
     font-family: "Regular";
     padding: 0.75rem;
     outline: none;
+    resize: none;
 
     &:focus {
       border-color: $primary-blue;
@@ -130,6 +152,17 @@
       }
     }
 
+    input[type=file]::file-selector-button {
+      width: 10rem;
+      margin-right: 0.5rem;
+      margin-left: auto;
+    }
+
+    &__input {
+      display: flex;
+      justify-content: space-between;
+    }
+
     &__cancel {
       margin-bottom: 0;
       position: absolute;
@@ -156,16 +189,16 @@
     }
 
     &__hero {
-      width: 30%;
+      width: 40%;
     }
 
     &__form {
-      width: 70%;
+      width: 60%;
     }
 
     &__preview-image {
       width: calc(100%);
-      height: 13rem;
+      height: 17.5rem;
       object-fit: cover;
     }
 
@@ -182,9 +215,18 @@
         margin-right: 0;
         height: 2.5rem;
       }
-
     }
 
+    input[type="file"]::file-selector-button {
+      width: 10rem;
+      margin-right: 0.5rem;
+      height: 2.5rem;
+    }
+
+    &__input {
+      display: flex;
+      justify-content: space-between;
+    }
     &__cancel {
       margin-bottom: 0;
       position: absolute;
