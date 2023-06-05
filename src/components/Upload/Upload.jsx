@@ -17,12 +17,12 @@ function Upload() {
   const formRef = useRef(null);
 
   const handleInputName = (event) => {
-    setInputName(event.target.value.trim());
+    setInputName(event.target.value);
     setHasTouchedForm((prev) => [true, prev[1], prev[2]]);
   };
 
   const handleInputDescription = (event) => {
-    setInputDescription(event.target.value.trim());
+    setInputDescription(event.target.value);
     setHasTouchedForm((prev) => [prev[0], true, prev[2]]);
   };
 
@@ -43,7 +43,7 @@ function Upload() {
     fileReader.addEventListener("load", () => {
       const base64Blob = fileReader.result;
 
-      setInputPoster(e.target.value.trim());
+      setInputPoster(e.target.value);
       setInputPosterImage(base64Blob);
       setHasTouchedForm((prev) => [prev[0], prev[1], true]);
     });

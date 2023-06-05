@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 const getDate = (timestamp) => {
   return new Date(timestamp).toLocaleDateString("en-GB"); // Convert timestamp to a localized date string
@@ -33,43 +33,40 @@ function transformDateAgo(value, args) {
   return value;
 }
 
-const getData = ( pathExt = '' ) => {
-  return new Promise( async ( resolve ) => {
+const getData = (pathExt = "") => {
+  return new Promise(async (resolve) => {
     const API_videos = "http://localhost:3001/videos";
-    const {api_key} = JSON.parse( sessionStorage.getItem( "apiKey" ) );
+    const { api_key } = JSON.parse(sessionStorage.getItem("apiKey"));
 
     try {
+      const responseSideVideos = await axios.get(API_videos + pathExt, {
+        params: { api_key },
+      });
 
-      const responseSideVideos = await axios.get( API_videos + pathExt, {
-        params: {api_key},
-      } );
+      const { status, data } = responseSideVideos;
 
-      const {status, data} = responseSideVideos
+      if (status !== 200) throw Error(responseSideVideos.statusText);
 
-      if ( status !== 200 ) throw Error( responseSideVideos.statusText )
-
-      resolve( data )
-    } catch ( error ) {
-      console.log( 'Error fetching videos ', error )
+      resolve(data);
+    } catch (error) {
+      console.log("Error fetching videos ", error);
     }
+  });
+};
 
-  } )
-}
-
-const postData = ( currentVieoId, inputText ) => {
-  return new Promise( async ( resolve, reject ) => {
+const postData = (currentVieoId, inputText) => {
+  return new Promise(async (resolve, reject) => {
     const API_videos = "http://localhost:3001/videos";
-    const {api_key} = JSON.parse( sessionStorage.getItem( "apiKey" ) );
+    const { api_key } = JSON.parse(sessionStorage.getItem("apiKey"));
 
     try {
-
       const postBody = {
         name: "Guest",
         comment: inputText,
       };
 
       const response = await axios.post(
-        API_videos + `/${ currentVieoId }/comments`,
+        API_videos + `/${currentVieoId}/comments`,
         postBody,
         {
           params: {
@@ -78,28 +75,25 @@ const postData = ( currentVieoId, inputText ) => {
         }
       );
 
-      const {status, data} = response
+      const { status, data } = response;
 
-      if ( status !== 200 ) throw Error( response.statusText )
+      if (status !== 200) throw Error(response.statusText);
 
-      resolve( data )
-
-    } catch ( error ) {
-      console.log( 'Error posting comment ', error )
+      resolve(data);
+    } catch (error) {
+      console.log("Error posting comment ", error);
     }
-
-  } )
-}
+  });
+};
 
 const putData = (currentVieoId) => {
-  return new Promise( async ( resolve, reject ) => {
+  return new Promise(async (resolve, reject) => {
     const API_videos = "http://localhost:3001/videos";
-    const {api_key} = JSON.parse( sessionStorage.getItem( "apiKey" ) );
+    const { api_key } = JSON.parse(sessionStorage.getItem("apiKey"));
 
     try {
-
       const response = await axios.post(
-        API_videos + `/${ currentVieoId }/like`,
+        API_videos + `/${currentVieoId}/like`,
         {},
         {
           params: {
@@ -108,28 +102,25 @@ const putData = (currentVieoId) => {
         }
       );
 
-      const {status, data} = response
+      const { status, data } = response;
 
-      if ( status !== 200 ) throw Error( response.statusText )
+      if (status !== 200) throw Error(response.statusText);
 
-      resolve( data )
-
-    } catch ( error ) {
-      console.log( 'Error posting like ', error )
+      resolve(data);
+    } catch (error) {
+      console.log("Error posting like ", error);
     }
+  });
+};
 
-  } )
-}
-
-const deleteData = ( currentVieoId, commentId ) => {
-  return new Promise( async ( resolve, reject ) => {
-
+const deleteData = (currentVieoId, commentId) => {
+  return new Promise(async (resolve, reject) => {
     const API_videos = "http://localhost:3001/videos";
-    const {api_key} = JSON.parse( sessionStorage.getItem( "apiKey" ) );
+    const { api_key } = JSON.parse(sessionStorage.getItem("apiKey"));
 
     try {
       const response = await axios.delete(
-        API_videos + `/${ currentVieoId }/comments/${ commentId }`,
+        API_videos + `/${currentVieoId}/comments/${commentId}`,
         {
           params: {
             api_key,
@@ -137,25 +128,21 @@ const deleteData = ( currentVieoId, commentId ) => {
         }
       );
 
-      const {status, data} = response
+      const { status, data } = response;
 
-      if ( status !== 200 ) throw Error( response.statusText )
+      if (status !== 200) throw Error(response.statusText);
 
-      resolve( data )
+      resolve(data);
+    } catch (error) {}
+  });
+};
 
-    } catch ( error ) {
-
-    }
-  } )
-}
-
-const uploadData = ( formData ) => {
-  return new Promise( async ( resolve, reject ) => {
+const uploadData = (formData) => {
+  return new Promise(async (resolve, reject) => {
     const API_upload = "http://localhost:3001/upload";
-    const {api_key} = JSON.parse( sessionStorage.getItem( "apiKey" ) );
+    const { api_key } = JSON.parse(sessionStorage.getItem("apiKey"));
 
     try {
-
       const postBody = formData;
 
       const response = await axios.post(API_upload, postBody, {
@@ -167,17 +154,23 @@ const uploadData = ( formData ) => {
         },
       });
 
-      const {status, data} = response
+      const { status, data } = response;
 
-      if ( status !== 200 ) throw Error( response.statusText )
+      if (status !== 200) throw Error(response.statusText);
 
-      resolve( data )
-
-    } catch ( error ) {
-      console.log( 'Error uploading ', error )
+      resolve(data);
+    } catch (error) {
+      console.log("Error uploading ", error);
     }
+  });
+};
 
-  } )
-}
-
-export {getDate, transformDateAgo, getData, postData, deleteData, uploadData, putData};
+export {
+  getDate,
+  transformDateAgo,
+  getData,
+  postData,
+  deleteData,
+  uploadData,
+  putData,
+};

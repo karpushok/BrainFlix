@@ -12,8 +12,8 @@ function SidevideosItem({ data }) {
     <div className="sidevideos-item" onClick={handleVideoCLick}>
       <div className="sidevideos-item__image">
         <img
-        // change the route for images
-          src={'http://localhost:3001'+data.image}
+          // change the route for images
+          src={"http://localhost:3001" + data.image}
           className="sidevideos-item__image-img"
           alt="hero"
         />
